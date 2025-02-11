@@ -1,0 +1,30 @@
+.app {
+  max-width: 576px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .main {
+    height: 100%;
+    overflow: hidden auto;
+    width: 100%;
+    padding-bottom: 110px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 16px 16px 0 0;
+  }
+}

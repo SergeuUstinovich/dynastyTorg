@@ -1,0 +1,7 @@
+export * from './Footer/Footer'
+export * from './Header/Header'
+export * from './HomeOrders/HomeOrders'
+export * from './ContainerSwiper/ContainerSwiper'
+export * from './SwitchOrdesrs/SwitchOption'
+export * from './ListOrders/ListOrders'
+export * from './TitlePage/TitlePage'

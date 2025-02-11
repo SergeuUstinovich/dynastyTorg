@@ -1,0 +1,25 @@
+.btn {
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: var(--secondary);
+
+  &:disabled {
+    // background-color: var(--light-grey);
+    opacity: 0.5;
+    // border-color: var(--grey);
+  }
+
+  // &[data-kind="secondary"] {
+  //   background-color: var(--secondary);
+
+  //   &:hover {
+  //     background-color: var(--secondary-hover);
+  //   }
+  // }
+}

@@ -1,0 +1,34 @@
+.boxOrders {
+  background-color: var(--white);
+  border-radius: 18px;
+  padding: 12px;
+  margin-bottom: 8px;
+
+  .link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+      .title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+        color: var(--secondary);
+      }
+
+      .descr {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 140%;
+        color: var(--muted);
+      }
+    }
+  }
+
+  .btn {
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--btn-bg);
+  }
+}

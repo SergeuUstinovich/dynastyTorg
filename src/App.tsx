@@ -1,0 +1,61 @@
+import { lazy, Suspense, useEffect } from "react";
+import "./styles/global/App.scss";
+import { Route, Routes, useNavigate } from "react-router";
+import { useTelegram } from "./providers/telegram/telegram";
+import { useLocation } from "react-router";
+
+const Layout = lazy(() => import("./pages/Layout/Layout"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Tasks = lazy(() => import("./pages/Tasks/Tasks"));
+const MyOrders = lazy(() => import("./pages/MyOrders/MyOrders"));
+const ItemOrders = lazy(() => import("./pages/ItemOrders/ItemOrders"));
+const PhotoOrders = lazy(() => import("./components/PhotoOrders/PhotoOrders"));
+const PhotoIndex = lazy(() => import("./components/PhotoOrders/PhotoIndex"));
+const Calculate = lazy(() => import("./pages/Calculate/Calculate"));
+
+function App() {
+  const { tg } = useTelegram();
+  const navigate = useNavigate();
+  const location = useLocation();
+  tg.expand();
+  tg.disableVerticalSwipes();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      tg.BackButton.hide();
+    } else {
+      tg.BackButton.show();
+      tg.BackButton.onClick(() => {
+        navigate(-1);
+      });
+    }
+    return () => {
+      tg.BackButton.offClick(() => {
+        navigate(-1);
+      });
+    };
+  }, [location.pathname, tg.BackButton, navigate]);
+
+  return (
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path={"/"} element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path={"home-orders"} element={<MyOrders />} />
+            <Route path={"home-orders-info/:id"} element={<ItemOrders />} />
+            <Route path={"home-orders-info/:id/photo"} element={<PhotoOrders />} />
+            <Route path={"home-orders-info/:id/photo/:index"} element={<PhotoIndex />} />
+            <Route path={"home-calculate"} element={<Calculate />} />
+            <Route path={"tasks"} element={<Tasks />} />
+            <Route path={"lvl"} element={<Tasks />} />
+            <Route path={"services"} element={<Tasks />} />
+            <Route path={"aboutus"} element={<Tasks />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </>
+  );
+}
+
+export default App;

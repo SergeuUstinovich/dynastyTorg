@@ -1,0 +1,103 @@
+.header {
+  background-color: var(--white);
+  border-radius: 40px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  .infoUserBox {
+    display: flex;
+    align-items: center;
+
+    .imgRang {
+      width: 14px;
+      height: 14px;
+      margin-right: 2px;
+    }
+
+    .svgImgBox {
+      background-color: var(--muted);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      margin-right: 4px;
+
+      .imgSvg {
+        border-radius: 100px;
+      }
+
+      .svg path {
+        fill: var(--white);
+      }
+    }
+
+    .infoUser {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 140%;
+        color: var(--secondary);
+      }
+
+      .descr {
+        display: flex;
+        align-items: center;
+
+        .span {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 140%;
+          color: var(--muted);
+        }
+      }
+    }
+  }
+
+  .countBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .count {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--muted);
+      border-radius: 16px;
+      padding: 5px 8px;
+
+      .countSvg {
+        background: var(--primary);
+        width: 21px;
+        height: 21px;
+        border-radius: 100%;
+        padding: 3px;
+        margin-right: 4px;
+      }
+
+      .countSvg path {
+        fill: var(--white);
+      }
+
+      .value {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        color: var(--primary);
+      }
+    }
+
+    .btn {
+      background: var(--primary);
+      border-radius: 40px;
+      padding: 8px;
+    }
+  }
+}
