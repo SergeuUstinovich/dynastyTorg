@@ -1,0 +1,26 @@
+.listInfo {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  border-radius: 18px;
+  background-color: #ffffff;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoText {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16.8px;
+  text-align: center;
+}

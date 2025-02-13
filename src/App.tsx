@@ -19,6 +19,8 @@ const ItemAction = lazy(() => import("./pages/Actions/ItemAction"));
 const Profile = lazy(() => import("./pages/Profile/Profile"));
 const ListDelivery = lazy(() => import("./pages/Delivery/ListDelivery"));
 const ItemDelivery = lazy(() => import("./pages/Delivery/ItemDelivery"));
+const Services = lazy(() => import("./pages/Services/Services"));
+const ServicesOrder = lazy(() => import("./pages/ServicesOrder/ServicesOrder"));
 
 function App() {
   const { tg } = useTelegram();
@@ -54,8 +56,14 @@ function App() {
             <Route path={"home-delivery"} element={<ListDelivery />} />
             <Route path={"home-delivery/:id"} element={<ItemDelivery />} />
             <Route path={"home-orders-info/:id"} element={<ItemOrders />} />
-            <Route path={"home-orders-info/:id/photo"} element={<PhotoOrders />} />
-            <Route path={"home-orders-info/:id/photo/:index"} element={<PhotoIndex />} />
+            <Route
+              path={"home-orders-info/:id/photo"}
+              element={<PhotoOrders />}
+            />
+            <Route
+              path={"home-orders-info/:id/photo/:index"}
+              element={<PhotoIndex />}
+            />
             <Route path={"home-calculate"} element={<Calculate />} />
             <Route path={"home-action"} element={<ListAction />} />
             <Route path={"home-action/:id"} element={<ItemAction />} />
@@ -63,7 +71,8 @@ function App() {
             <Route path={"home-skidki/:id"} element={<ItemSkidki />} />
             <Route path={"tasks"} element={<Tasks />} />
             <Route path={"lvl"} element={<Tasks />} />
-            <Route path={"services"} element={<Tasks />} />
+            <Route path={"services"} element={<Services />} />
+            <Route path={"services/:id"} element={<Services />} />
             <Route path={"aboutus"} element={<Tasks />} />
           </Route>
         </Routes>
