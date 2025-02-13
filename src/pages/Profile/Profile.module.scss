@@ -1,0 +1,21 @@
+.boxProfile {
+  .boxSkidka {
+    border-radius: 18px;
+    padding: 12px;
+    background-color: var(--white);
+    margin-bottom: 8px;
+    .title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 130%;
+      color: var(--primary);
+    }
+
+    .descr {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 140%;
+      color: var(--muted);
+    }
+  }
+}

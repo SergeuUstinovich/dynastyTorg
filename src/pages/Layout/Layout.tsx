@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { mainActions } from "../../providers/StoreProvider/slice/mainSlice";
 import { myOrderActions } from "../../providers/StoreProvider/slice/myOrderSlice";
+import { Toaster } from "react-hot-toast";
 
 function Layout() {
   const { mainPageQuery, myOrderQuery } = useAllQuery();
@@ -25,6 +26,7 @@ function Layout() {
 
   return (
     <div className={style.app}>
+      <Toaster position="top-center" reverseOrder={false} />
       <main className={style.main}>
         <Header />
         <Outlet />

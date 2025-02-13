@@ -23,6 +23,7 @@ export interface UserType {
   city: string;
   mobile_phone: number;
   email: string;
+  first_order: boolean;
 }
 
 export interface MyRangType {
@@ -61,6 +62,7 @@ export interface AchievementType {
   achievement: {
     id: number;
     name: string;
+    description: string;
     image: {
       image_url: string;
     };

@@ -4,6 +4,7 @@ import { displayName } from "../../helpers/truncateText";
 import { Button } from "../../ui/Button";
 import style from "./Header.module.scss";
 import { getMainSelector } from "../../providers/StoreProvider/selectors/getMainSelector";
+import { Link } from "react-router";
 
 const api_url = import.meta.env.VITE_API_BASE_URL
 
@@ -11,7 +12,7 @@ export function Header() {
   const user = useSelector(getMainSelector);
   return (
     <div className={style.header}>
-      <div className={style.infoUserBox}>
+      <Link to={'/home-profile'} className={style.infoUserBox}>
         <div className={style.svgImgBox}>
           {user?.user.photo_url ? (
             <img className={style.imgSvg} src={user?.user.photo_url} alt="" />
@@ -33,7 +34,7 @@ export function Header() {
           )}
           
         </div>
-      </div>
+      </Link>
       <div className={style.countBox}>
         <div className={style.count}>
           <ServicesSvg className={style.countSvg} />

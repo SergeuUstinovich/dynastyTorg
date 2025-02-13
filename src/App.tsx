@@ -12,6 +12,13 @@ const ItemOrders = lazy(() => import("./pages/ItemOrders/ItemOrders"));
 const PhotoOrders = lazy(() => import("./components/PhotoOrders/PhotoOrders"));
 const PhotoIndex = lazy(() => import("./components/PhotoOrders/PhotoIndex"));
 const Calculate = lazy(() => import("./pages/Calculate/Calculate"));
+const ListSkidki = lazy(() => import("./pages/Skidki/ListSkidki"));
+const ItemSkidki = lazy(() => import("./pages/Skidki/ItemSkidki"));
+const ListAction = lazy(() => import("./pages/Actions/ListAction"));
+const ItemAction = lazy(() => import("./pages/Actions/ItemAction"));
+const Profile = lazy(() => import("./pages/Profile/Profile"));
+const ListDelivery = lazy(() => import("./pages/Delivery/ListDelivery"));
+const ItemDelivery = lazy(() => import("./pages/Delivery/ItemDelivery"));
 
 function App() {
   const { tg } = useTelegram();
@@ -43,10 +50,17 @@ function App() {
           <Route path={"/"} element={<Layout />}>
             <Route index element={<Home />} />
             <Route path={"home-orders"} element={<MyOrders />} />
+            <Route path={"home-profile"} element={<Profile />} />
+            <Route path={"home-delivery"} element={<ListDelivery />} />
+            <Route path={"home-delivery/:id"} element={<ItemDelivery />} />
             <Route path={"home-orders-info/:id"} element={<ItemOrders />} />
             <Route path={"home-orders-info/:id/photo"} element={<PhotoOrders />} />
             <Route path={"home-orders-info/:id/photo/:index"} element={<PhotoIndex />} />
             <Route path={"home-calculate"} element={<Calculate />} />
+            <Route path={"home-action"} element={<ListAction />} />
+            <Route path={"home-action/:id"} element={<ItemAction />} />
+            <Route path={"home-skidki"} element={<ListSkidki />} />
+            <Route path={"home-skidki/:id"} element={<ItemSkidki />} />
             <Route path={"tasks"} element={<Tasks />} />
             <Route path={"lvl"} element={<Tasks />} />
             <Route path={"services"} element={<Tasks />} />

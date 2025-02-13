@@ -1,0 +1,63 @@
+.boxList {
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-radius: 18px;
+    padding: 12px;
+    background: var(--white);
+
+    .btn {
+      width: 48%;
+      padding: 0;
+    }
+  }
+}
+
+.boxItem {
+  .boxInfo {
+    border-radius: 18px;
+    padding: 12px;
+    background: var(--white);
+    margin-bottom: 8px;
+
+    .descr {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 130%;
+      color: var(--secondary);
+      margin-bottom: 10px;
+
+      .span {
+        color: var(--primary);
+
+        .spanDescr {
+          color: var(--secondary);
+        }
+      }
+    }
+    .img {
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+
+    .descrItem {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .btnItem {
+      border-radius: 16px;
+      padding: 12px;
+      background: var(--primary);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--white);
+      width: 100%;
+    }
+  }
+}

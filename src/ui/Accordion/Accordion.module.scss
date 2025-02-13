@@ -1,0 +1,67 @@
+.accordionItem {
+  border-radius: 18px;
+  padding: 12px;
+  background: var(--white);
+
+  .accordionTitle {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+
+    .boxTitle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .infoTitle {
+        .title {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 130%;
+          color: var(--secondary);
+        }
+
+        .descr {
+          text-align: left;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 140%;
+          color: var(--muted);
+        }
+      }
+    }
+  }
+
+  .accordionContent {
+    padding: 0 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: var(--white);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .boxSvg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--btn-bg);
+  }
+
+  .svg {
+    transform: rotate(90deg);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .svg.arrowUp {
+    transform: rotate(-90deg);
+  }
+}
+
+.accordionContent.open {
+  max-height: 1000px;
+  transition: all 0.3s ease;
+}

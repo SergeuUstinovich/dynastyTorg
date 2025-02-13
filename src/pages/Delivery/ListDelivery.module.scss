@@ -1,0 +1,85 @@
+.boxDelivery {
+  .list {
+    border-radius: 18px;
+    padding: 12px;
+    background: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    .item {
+      width: 48%;
+    }
+  }
+}
+
+.box {
+  .boxInfo {
+    border-radius: 18px;
+    padding: 12px;
+    background: var(--white);
+    margin-bottom: 8px;
+    .titleInfo {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 130%;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .boxImg {
+      margin-bottom: 8px;
+      .imgInfo {
+        border-radius: 12px;
+        aspect-ratio: 16/12;
+        width: 100%;
+      }
+    }
+
+    .descrInfo {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+      color: var(--secondary);
+    }
+  }
+
+  .boxAccor {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .item {
+        .title {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 140%;
+          color: var(--primary);
+          margin-bottom: 4px;
+        }
+
+        .descrType {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 140%;
+          color: var(--secondary);
+          margin-bottom: 3px;
+          .spanType {
+            font-weight: 500;
+            color: var(--muted);
+          }
+        }
+
+        .descr {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+          color: var(--secondary);
+        }
+      }
+    }
+  }
+}

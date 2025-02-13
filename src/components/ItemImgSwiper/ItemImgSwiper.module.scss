@@ -1,0 +1,50 @@
+.boxItem {
+  .boxImg {
+    aspect-ratio: 1/1;
+    margin-bottom: 4px;
+    position: relative;
+    .img {
+      aspect-ratio: 1/1;
+      border-radius: 12px;
+    }
+
+    .disable {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .disDescr {
+        color: var(--white);
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .descr {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    text-align: center;
+    color: var(--secondary);
+
+    .span {
+      color: var(--primary);
+
+      .spanDescr {
+        color: var(--secondary);
+      }
+    }
+  }
+}
