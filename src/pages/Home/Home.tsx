@@ -59,7 +59,7 @@ function Home() {
                 key={item.id}
                 src={`${api_url}${item.image.image_url}`}
                 descr={item.text}
-                disable
+                disable={item.activate}
               />
             ))}
           </CustomSwiper>

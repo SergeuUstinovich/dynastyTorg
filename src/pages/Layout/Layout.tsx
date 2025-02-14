@@ -9,7 +9,7 @@ import { myOrderActions } from "../../providers/StoreProvider/slice/myOrderSlice
 import { Toaster } from "react-hot-toast";
 
 function Layout() {
-  const { mainPageQuery, myOrderQuery } = useAllQuery();
+  const { mainPageQuery, myOrderQuery, allTasksQuery } = useAllQuery();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,6 +23,12 @@ function Layout() {
       dispatch(myOrderActions.myOrderData(myOrderQuery.data));
     }
   }, [myOrderQuery.data, dispatch]);
+
+  useEffect(() => {
+    if (allTasksQuery.data) {
+      console.log(allTasksQuery)
+    }
+  }, [allTasksQuery.data, dispatch]);
 
   return (
     <div className={style.app}>

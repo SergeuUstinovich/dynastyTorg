@@ -55,6 +55,7 @@ export interface ActionsType {
   price: number;
   text: string;
   created: string;
+  activate: boolean;
 }
 
 export interface AchievementType {

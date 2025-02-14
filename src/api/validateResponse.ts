@@ -2,7 +2,7 @@ interface ErrorResponse {
   response: {
     status: number;
     data: {
-      error: string;
+      Error: string;
       Info: string
     };
   };
@@ -10,7 +10,7 @@ interface ErrorResponse {
 
 export function validateResponse(error: ErrorResponse) {
   if (error.response.status !== 200) {
-    throw new Error(error.response.data.Info);
+    throw new Error(error.response.data.Error);
   } else {
     throw new Error("Произошла неизвестная ошибка.");
   }

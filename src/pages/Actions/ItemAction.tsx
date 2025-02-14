@@ -8,6 +8,7 @@ import ImageContainer from "../../utils/ImageContainer";
 import { Button } from "../../ui/Button";
 import { ContainerSwiper, ItemImgSwiper } from "../../components";
 import { CustomSwiper } from "../../ui";
+import { useAllMutate } from "../../utils/useAllMutate";
 
 const api_url = import.meta.env.VITE_API_BASE_URL;
 
@@ -15,6 +16,7 @@ function ItemAction() {
   const { id } = useParams();
   const action = useSelector(getMainSelector);
   const [item, setItem] = useState<ActionsType>();
+  const { sendActionMutate } = useAllMutate();
 
   useEffect(() => {
     if (action) {
@@ -28,6 +30,10 @@ function ItemAction() {
     slidesPerView: action && action.actions.length > 2 ? 2.4 : 2,
   };
 
+  const handleActionSend = (id: number) => {
+    sendActionMutate.mutate({ id });
+  };
+
   return (
     <div className={style.boxItem}>
       {item && (
@@ -39,7 +45,13 @@ function ItemAction() {
             x1x16
           />
           <p className={style.descrItem}>{item.description}</p>
-          <Button className={style.btnItem}>Оформить заказ</Button>
+          <Button
+            onClick={() => handleActionSend(item.id)}
+            className={style.btnItem}
+            isLoading={sendActionMutate.isPending}
+          >
+            Активировать ({item.price})
+          </Button>
         </div>
       )}
       <ContainerSwiper title="Акции" link="/home-action">
@@ -50,7 +62,7 @@ function ItemAction() {
                 key={item.id}
                 src={`${api_url}${item.image.image_url}`}
                 descr={item.text}
-                disable
+                disable={item.activate}
               />
             ))}
         </CustomSwiper>

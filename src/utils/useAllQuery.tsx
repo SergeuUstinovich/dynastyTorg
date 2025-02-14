@@ -4,6 +4,7 @@ import { useTelegram } from "../providers/telegram/telegram";
 import { useQuery } from "@tanstack/react-query";
 import { mainPage, myOrder } from "../api/main";
 import { queryClient } from "../api/queryClient";
+import { allTasks } from "../api/tasks";
 
 export function useAllQuery() {
   const [searchParams] = useSearchParams();
@@ -34,8 +35,18 @@ export function useAllQuery() {
     queryClient
   );
 
+  const allTasksQuery = useQuery(
+    {
+      queryKey: ["tasks"],
+      queryFn: () => allTasks(),
+      enabled: startInit,
+    },
+    queryClient
+  );
+  
   return {
     mainPageQuery,
-    myOrderQuery
+    myOrderQuery,
+    allTasksQuery
   }
 }

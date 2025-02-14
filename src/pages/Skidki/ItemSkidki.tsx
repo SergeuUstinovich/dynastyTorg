@@ -8,6 +8,7 @@ import ImageContainer from "../../utils/ImageContainer";
 import { Button } from "../../ui/Button";
 import { ContainerSwiper, ItemImgSwiper } from "../../components";
 import { CustomSwiper } from "../../ui";
+import { useTelegram } from "../../providers/telegram/telegram";
 
 const api_url = import.meta.env.VITE_API_BASE_URL;
 
@@ -15,6 +16,7 @@ function ItemSkidki() {
   const { id } = useParams();
   const skidki = useSelector(getMainSelector);
   const [item, setItem] = useState<SkidkiType>();
+  const {tg} = useTelegram();
 
   useEffect(() => {
     if (skidki) {
@@ -27,6 +29,10 @@ function ItemSkidki() {
     spaceBetween: 8,
     slidesPerView: skidki && skidki.skidki.length > 2 ? 2.4 : 2,
   };
+
+  const handleOrder = () => {
+    tg.openTelegramLink('https://t.me/cargo_dinastiya')
+  }
 
   return (
     <div className={style.boxItem}>
@@ -48,7 +54,7 @@ function ItemSkidki() {
             x1x16
           />
           <p className={style.descrItem}>{item.description}</p>
-          <Button className={style.btnItem}>Оформить заказ</Button>
+          <Button onClick={handleOrder} className={style.btnItem}>Оформить заказ</Button>
         </div>
       )}
       <ContainerSwiper

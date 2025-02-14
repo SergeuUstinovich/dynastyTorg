@@ -4,9 +4,13 @@ import { Button } from "../../ui/Button";
 import { ArrowSvg, ServicesSvg } from "../../assets/svg";
 import { MyOrdersItemType } from "../../types/MyOrdersType";
 import { getOrderStatus } from "../../helpers/getOrderStatus";
+import { useTelegram } from "../../providers/telegram/telegram";
 
 export function ListOrders({arr}: {arr: MyOrdersItemType[]} ) {
-  
+  const {tg} = useTelegram()
+  const handleOrder = () => {
+    tg.openTelegramLink('https://t.me/cargo_dinastiya')
+  }
   return (
     <>
       {arr.length > 0 ? (
@@ -32,7 +36,7 @@ export function ListOrders({arr}: {arr: MyOrdersItemType[]} ) {
           <ServicesSvg className={style.svgNotArr} />
           <h2 className={style.titleNotArr}>Нет заказов</h2>
           <p className={style.descrNotArr}>Ой, похоже у вас ещё нет заказов</p>
-          <Button className={style.btnNotArr}>Заказать</Button>
+          <Button onClick={handleOrder} className={style.btnNotArr}>Заказать</Button>
         </div>
       )}
     </>

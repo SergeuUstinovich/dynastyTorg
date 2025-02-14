@@ -1,6 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { queryClient } from "../api/queryClient";
 import { calculateForm } from "../api/main";
+import { sendAction } from "../api/actions";
+import toast from "react-hot-toast";
 
 export function useAllMutate() {
   const calculateMutate = useMutation(
@@ -26,7 +28,26 @@ export function useAllMutate() {
     queryClient
   );
 
+  const sendActionMutate = useMutation(
+    {
+      mutationFn: (data: {
+        id: number
+      }) =>
+        sendAction(
+          data.id
+        ),
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ["main"] });
+      },
+      onError: (err) => {
+        toast.error(err.message)
+      }
+    },
+    queryClient
+  );
+
   return {
     calculateMutate,
+    sendActionMutate
   };
 }

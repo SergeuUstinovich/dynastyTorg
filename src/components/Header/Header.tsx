@@ -5,11 +5,18 @@ import { Button } from "../../ui/Button";
 import style from "./Header.module.scss";
 import { getMainSelector } from "../../providers/StoreProvider/selectors/getMainSelector";
 import { Link } from "react-router";
+import { useTelegram } from "../../providers/telegram/telegram";
 
 const api_url = import.meta.env.VITE_API_BASE_URL
 
 export function Header() {
   const user = useSelector(getMainSelector);
+  const {tg} = useTelegram();
+
+  const handleSupport = () => {
+    tg.openTelegramLink('https://t.me/cargo_dinastiya')
+  }
+  
   return (
     <div className={style.header}>
       <Link to={'/home-profile'} className={style.infoUserBox}>
@@ -40,7 +47,7 @@ export function Header() {
           <ServicesSvg className={style.countSvg} />
           <span className={style.value}>{user?.user.money}</span>
         </div>
-        <Button className={style.btn}>
+        <Button onClick={handleSupport} className={style.btn}>
           <SupportSvg />
         </Button>
       </div>
