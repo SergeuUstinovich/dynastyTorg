@@ -1,0 +1,81 @@
+.listBox {
+  .list {
+    border-radius: 18px;
+    padding: 12px 0px 0px 0px;
+    background: var(--white);
+  }
+
+  .item {
+    border-bottom: 1px solid #dbdbdb;
+padding: 6px 0;
+    .btn {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      justify-content: space-between;
+      width: 100%;
+      .boxInfo {
+        display: flex;
+        align-items: center;
+        .img {
+          max-width: 44px;
+          max-height: 44px;
+          margin-right: 8px;
+          border: 1px solid var(--bg);
+          border-radius: 8px;
+        }
+
+        .boxTitle {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 140%;
+            color: var(--secondary);
+            text-align: start;
+          }
+
+          .boxValue {
+            display: flex;
+            align-items: center;
+
+            .svgBox {
+              background: var(--primary);
+              border-radius: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 3px;
+              margin-right: 4px;
+
+              .svgServices {
+                max-width: 12px;
+                max-height: 12px;
+              }
+
+              .svgServices path {
+                fill: var(--white);
+              }
+            }
+
+            .descr {
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 140%;
+              color: var(--primary);
+            }
+          }
+        }
+      }
+
+      .boxSvg {
+        border-radius: 8px;
+        padding: 4px;
+        background-color: var(--btn-bg);
+      }
+    }
+  }
+}

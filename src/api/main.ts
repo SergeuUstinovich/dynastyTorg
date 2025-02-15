@@ -8,12 +8,11 @@ const api_url =
     ? "/api"
     : import.meta.env.VITE_API_BASE_URL;
 
-export function mainPage(initData: string, refferal?: number) {
+export function mainPage(initData: string) {
   return axios
     .get(`${api_url}/api/main_page/`, {
       headers: {
         Authorization: initData,
-        xreferralid: refferal,
       },
     })
     .then((response) => response.data)

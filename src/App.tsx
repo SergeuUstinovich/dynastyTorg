@@ -21,6 +21,8 @@ const ItemAction = lazy(() => import("./pages/Actions/ItemAction"));
 const Profile = lazy(() => import("./pages/Profile/Profile"));
 const ListDelivery = lazy(() => import("./pages/Delivery/ListDelivery"));
 const ItemDelivery = lazy(() => import("./pages/Delivery/ItemDelivery"));
+const Services = lazy(() => import("./pages/Services/Services"));
+// const ServicesOrder = lazy(() => import("./pages/ServicesOrder/ServicesOrder"));
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
 
 function App() {
@@ -86,7 +88,8 @@ function App() {
             />
             <Route path={"tasks"} element={<Tasks />} />
             <Route path={"lvl"} element={<Tasks />} />
-            <Route path={"services"} element={<Tasks />} />
+            <Route path={"services"} element={<Services />} />
+            <Route path={"services/:id"} element={<Services />} />
             <Route path={"aboutus"} element={<AboutUs />} />
           </Route>
         </Routes>

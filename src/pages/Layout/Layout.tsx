@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { mainActions } from "../../providers/StoreProvider/slice/mainSlice";
 import { myOrderActions } from "../../providers/StoreProvider/slice/myOrderSlice";
 import { Toaster } from "react-hot-toast";
+import { tasksActions } from "../../providers/StoreProvider/slice/tasksSlice";
 
 function Layout() {
   const { mainPageQuery, myOrderQuery, allTasksQuery } = useAllQuery();
@@ -26,7 +27,7 @@ function Layout() {
 
   useEffect(() => {
     if (allTasksQuery.data) {
-      console.log(allTasksQuery)
+      dispatch(tasksActions.tasksData(allTasksQuery.data))
     }
   }, [allTasksQuery.data, dispatch]);
 

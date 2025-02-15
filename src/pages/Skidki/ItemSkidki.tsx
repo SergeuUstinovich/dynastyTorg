@@ -50,7 +50,7 @@ function ItemSkidki() {
           </p>
           <ImageContainer
             className={style.img}
-            src={`${api_url}/${item.image.image_url}`}
+            src={`${api_url}/${item.image}`}
             x1x16
           />
           <p className={style.descrItem}>{item.description}</p>
@@ -67,7 +67,7 @@ function ItemSkidki() {
             skidki.skidki.map((item) => (
               <ItemImgSwiper
                 key={item.id}
-                src={`${api_url}${item.image.image_url}`}
+                src={`${api_url}${item.image}`}
                 descr={item.text}
                 disable={item.activate}
                 title={item.rang.name}
