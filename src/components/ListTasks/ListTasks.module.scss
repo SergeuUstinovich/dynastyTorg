@@ -7,7 +7,7 @@
 
   .item {
     border-bottom: 1px solid #dbdbdb;
-padding: 6px 0;
+    padding: 6px 0;
     .btn {
       display: flex;
       align-items: center;
@@ -76,6 +76,93 @@ padding: 6px 0;
         padding: 4px;
         background-color: var(--btn-bg);
       }
+    }
+  }
+}
+
+.boxSlide {
+  width: 100%;
+
+  .slideImg {
+    margin-bottom: 20px;
+  }
+
+  .slidetitle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .boxCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 26px;
+
+    .bgCount {
+      padding: 4px 8px;
+      background: rgba(0, 122, 255, 0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .svgBox {
+      display: flex;
+      align-items: center;
+      padding: 3px;
+      background: var(--primary);
+      margin-right: 4px;
+      border-radius: 40px;
+
+      .svgServices {
+        max-width: 16px;
+        max-height: 16px;
+      }
+
+      .svgServices path {
+        fill: var(--white);
+      }
+    }
+
+    .descr {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 140%;
+      text-align: center;
+      color: var(--primary);
+    }
+  }
+
+  .boxBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    .checkBtn {
+      border: 1px solid var(--primary);
+      border-radius: 16px;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--primary);
+      width: 50%;
+    }
+
+    .takeBtn {
+      background: var(--primary);
+      border-radius: 16px;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--white);
+      width: 50%;
     }
   }
 }

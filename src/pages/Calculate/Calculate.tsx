@@ -12,6 +12,7 @@ import ListBox from "../../ui/ListBox/ListBox";
 import { useSelector } from "react-redux";
 import { getMainSelector } from "../../providers/StoreProvider/selectors/getMainSelector";
 import { useAllMutate } from "../../utils/useAllMutate";
+import toast from "react-hot-toast";
 
 function Calculate() {
   const [selectedCountry, setSelectedCountry] = useState<string>("RU");
@@ -38,6 +39,7 @@ function Calculate() {
     if (calculateMutate.isSuccess) {
       setValue("product", "");
       setValue("weight", "");
+      toast.success('С вами свяжется специалист')
     }
   }, [calculateMutate.isSuccess, setValue]);
 
