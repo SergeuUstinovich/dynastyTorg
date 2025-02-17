@@ -3,6 +3,7 @@ import { ArrowSvg, ServicesSvg } from "../../assets/svg";
 import ImageContainer from "../../utils/ImageContainer";
 import style from "./ListTasks.module.scss";
 import { TasksTypeKey } from "../../types/TasksType";
+import { useEffect } from "react";
 
 interface ItemTasksProps {
   task: TasksTypeKey
@@ -10,14 +11,22 @@ interface ItemTasksProps {
   name: string;
   img: string;
   onOpen: (task: TasksTypeKey) => void
+  refreshTask: (task: TasksTypeKey) => void
 }
 
 export function ItemTasks(props: ItemTasksProps) {
-  const {  reward, name, img, onOpen, task } = props;
+  const {  reward, name, img, onOpen, task, refreshTask } = props;
   
   const handleOpen = (task: TasksTypeKey) => {
     onOpen(task)
   }
+
+  useEffect(() => {
+    if(task) {
+      refreshTask(task)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [task])
 
   return (
     <>

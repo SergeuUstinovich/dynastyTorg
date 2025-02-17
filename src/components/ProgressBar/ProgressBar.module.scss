@@ -1,0 +1,29 @@
+.progressBar {
+    width: 100%;
+    background-color: #6e8ee9;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 16px;
+    position: relative;
+
+    .progressBarFill {
+      height: 100%;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .infoKG {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 140%;
+      color: var(--white);
+    }
+  }
+  
+
+  

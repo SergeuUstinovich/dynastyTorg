@@ -1,0 +1,47 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .item {
+    .boxInfo {
+      padding: 12px 0;
+
+      .img {
+        border-radius: 12px;
+        margin-bottom: 8px;
+      }
+
+      .descr {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 140%;
+        color: var(--secondary);
+        margin-bottom: 10px;
+      }
+
+      .itemList {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .itemItem {
+          .itemTitle {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 140%;
+            color: var(--primary);
+            margin-bottom: 4px;
+          }
+
+          .itemDescr {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 140%;
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@ function AboutUs() {
             {dataAbout.whyUs.map((item, index) => (
               <li className={style.item} key={index}>
                   <h3 className={style.title}>
-                  {index + 1}.
+                  {index + 1}. {item.title}
                 </h3>
                 <p className={style.descr}>{item.descr}</p>
               </li>
@@ -41,7 +41,7 @@ function AboutUs() {
             {dataAbout.numbers.map((item, index) => (
               <li className={style.item} key={index}>
                 <h3 className={style.title}>
-                  {index + 1}. {item.title}
+                  {item.title}
                 </h3>
                 <p className={style.descr}>{item.descr}</p>
               </li>

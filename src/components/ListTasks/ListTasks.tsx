@@ -9,6 +9,7 @@ import { ServicesSvg } from "../../assets/svg";
 import { Button } from "../../ui/Button";
 import { useTelegram } from "../../providers/telegram/telegram";
 import { useNavigate } from "react-router-dom";
+import { useAllMutate } from "../../utils/useAllMutate";
 
 interface ListTasksProps {
   arr: TasksType;
@@ -19,8 +20,10 @@ const api_url = import.meta.env.VITE_API_BASE_URL;
 export function ListTasks({ arr }: ListTasksProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [infoTask, setInfoTask] = useState<TasksTypeKey>();
-  const {tg} = useTelegram()
-  const navigate = useNavigate()
+  const { tg } = useTelegram();
+  const navigate = useNavigate();
+  const { changeStatusMutate, takeRewardMutate } = useAllMutate();
+  const [linkTask, setLinkTask] = useState<string>();
 
   useEffect(() => {
     queryClient.invalidateQueries({ queryKey: ["tasks"] });
@@ -31,21 +34,48 @@ export function ListTasks({ arr }: ListTasksProps) {
     setInfoTask(task);
   };
 
+  const handleRefreshTask = (task: TasksTypeKey) => {
+    setInfoTask(task);
+  };
+
   const handleClose = () => {
     setIsOpen(false);
   };
 
-  const handleLink = (link: string) => {
-    if(link) {
-      if(link.startsWith('https://t.me/')) {
-        tg.openTelegramLink(link)
-      } else if(link.startsWith('http')) {
-        tg.openLink(link)
+  const handleTake = (id: number) => {
+    takeRewardMutate.mutate({ id });
+  };
+
+  const handleLink = (id: number, link: string) => {
+    changeStatusMutate.mutate({ id });
+    setLinkTask(link);
+  };
+
+  const handleOpenLink = (link: string) => {
+    if (link) {
+      if (link.startsWith("https://t.me/")) {
+        tg.openTelegramLink(link);
+      } else if (link.startsWith("http")) {
+        tg.openLink(link);
       } else {
-        navigate(link)
+        navigate(link);
       }
     }
-  }
+  };
+
+  useEffect(() => {
+    if (changeStatusMutate.isSuccess) {
+      if (linkTask) {
+        if (linkTask.startsWith("https://t.me/")) {
+          tg.openTelegramLink(linkTask);
+        } else if (linkTask.startsWith("http")) {
+          tg.openLink(linkTask);
+        } else {
+          navigate(linkTask);
+        }
+      }
+    }
+  }, [changeStatusMutate.isSuccess, linkTask, tg, navigate]);
 
   return (
     <>
@@ -60,6 +90,7 @@ export function ListTasks({ arr }: ListTasksProps) {
                 name={item.task.name}
                 img={`${api_url}${item.task.image.image_url}`}
                 onOpen={handleOpen}
+                refreshTask={handleRefreshTask}
               />
             </li>
           ))}
@@ -76,14 +107,15 @@ export function ListTasks({ arr }: ListTasksProps) {
                 name={item.task.name}
                 img={`${api_url}${item.task.image.image_url}`}
                 onOpen={handleOpen}
+                refreshTask={handleRefreshTask}
               />
             </li>
           ))}
         </ul>
       </div>
       <SlidingPanel
-        initialHeight="68vh"
-        fullHeight="68vh"
+        initialHeight="60%"
+        fullHeight="60%"
         darkened
         onClose={handleClose}
         isOpen={isOpen}
@@ -102,8 +134,26 @@ export function ListTasks({ arr }: ListTasksProps) {
               </div>
             </div>
             <div className={style.boxBtn}>
-              <Button className={style.checkBtn}>Проверить</Button>
-              <Button onClick={() => handleLink(infoTask.task.link)} className={style.takeBtn}>Перейти</Button>
+              <Button
+                isDisabled={!infoTask.can_take || infoTask.taken}
+                isLoading={takeRewardMutate.isPending}
+                onClick={() => handleTake(infoTask.task.id)}
+                className={style.checkBtn}
+                kind="secondary"
+              >
+                {infoTask.taken ? "Бонус получен!" : "Проверить"}
+              </Button>
+              <Button
+                isLoading={changeStatusMutate.isPending}
+                onClick={
+                  !infoTask.can_take
+                    ? () => handleLink(infoTask.task.id, infoTask.task.link)
+                    : () => handleOpenLink(infoTask.task.link)
+                }
+                className={style.takeBtn}
+              >
+                Перейти
+              </Button>
             </div>
           </div>
         )}

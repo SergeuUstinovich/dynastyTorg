@@ -3,6 +3,7 @@ import { queryClient } from "../api/queryClient";
 import { calculateForm } from "../api/main";
 import { sendAction } from "../api/actions";
 import toast from "react-hot-toast";
+import { changeStatus, takeReward } from "../api/tasks";
 
 export function useAllMutate() {
   const calculateMutate = useMutation(
@@ -30,24 +31,49 @@ export function useAllMutate() {
 
   const sendActionMutate = useMutation(
     {
-      mutationFn: (data: {
-        id: number
-      }) =>
-        sendAction(
-          data.id
-        ),
+      mutationFn: (data: { id: number }) => sendAction(data.id),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["main"] });
       },
       onError: (err) => {
-        toast.error(err.message)
-      }
+        toast.error(err.message);
+      },
+    },
+    queryClient
+  );
+
+  const changeStatusMutate = useMutation(
+    {
+      mutationFn: (data: { id: number }) => changeStatus(data.id),
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ["tasks"] });
+      },
+      onError: (err) => {
+        toast.error(err.message);
+      },
+    },
+    queryClient
+  );
+
+  const takeRewardMutate = useMutation(
+    {
+      mutationFn: (data: { id: number }) => takeReward(data.id),
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ["tasks"] });
+        queryClient.invalidateQueries({ queryKey: ["main"] });
+        toast.success('Бонусы получены!');
+      },
+      onError: (err) => {
+        toast.error(err.message);
+      },
     },
     queryClient
   );
 
   return {
     calculateMutate,
-    sendActionMutate
+    sendActionMutate,
+    changeStatusMutate,
+    takeRewardMutate
   };
 }

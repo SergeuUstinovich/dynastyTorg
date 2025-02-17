@@ -28,7 +28,8 @@ export const Button: FC<IButtonProps> = ({
       data-kind={kind}
       {...props}
     >
-      {isLoading ? <LoaderButton />  : children}
+       
+      {isLoading ? <LoaderButton className={`${kind === 'secondary' ? style.secondColor : ''}`} />  : children}
     </button>
   );
 };

@@ -5,6 +5,7 @@ import { useTelegram } from "./providers/telegram/telegram";
 import { useLocation } from "react-router";
 import ProtectedRouteAction from "./utils/ProtectedRouteAction";
 import ProtectedRouteSkidki from "./utils/ProtectedRouteSkidki";
+import NotPage from "./components/NotPage/NotPage";
 
 const Layout = lazy(() => import("./pages/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -24,6 +25,7 @@ const ItemDelivery = lazy(() => import("./pages/Delivery/ItemDelivery"));
 const Services = lazy(() => import("./pages/Services/Services"));
 // const ServicesOrder = lazy(() => import("./pages/ServicesOrder/ServicesOrder"));
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
+const Lvling = lazy(() => import("./pages/Lvling/Lvling"));
 
 function App() {
   const { tg } = useTelegram();
@@ -87,10 +89,11 @@ function App() {
               }
             />
             <Route path={"tasks"} element={<Tasks />} />
-            <Route path={"lvl"} element={<Tasks />} />
+            <Route path={"lvl"} element={<Lvling />} />
             <Route path={"services"} element={<Services />} />
             <Route path={"services/:id"} element={<Services />} />
             <Route path={"aboutus"} element={<AboutUs />} />
+            <Route path={'*'} element={<NotPage />} />
           </Route>
         </Routes>
       </Suspense>

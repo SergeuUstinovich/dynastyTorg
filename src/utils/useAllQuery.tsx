@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { mainPage, myOrder } from "../api/main";
 import { queryClient } from "../api/queryClient";
 import { allTasks } from "../api/tasks";
+import { allLvl } from "../api/lvl";
 
 export function useAllQuery() {
   const [startInit, setStartInit] = useState(false);
@@ -41,10 +42,20 @@ export function useAllQuery() {
     },
     queryClient
   );
+
+  const allLvlQuery = useQuery(
+    {
+      queryKey: ["lvl"],
+      queryFn: () => allLvl(),
+      enabled: startInit,
+    },
+    queryClient
+  );
   
   return {
     mainPageQuery,
     myOrderQuery,
-    allTasksQuery
+    allTasksQuery,
+    allLvlQuery
   }
 }

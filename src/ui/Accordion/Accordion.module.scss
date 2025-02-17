@@ -7,6 +7,10 @@
     width: 100%;
     border: none;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 10px;
 
     .boxTitle {
       width: 100%;
@@ -31,10 +35,14 @@
         }
       }
     }
+
+    .boxProgress {
+      width: 100%;
+    }
   }
 
   .accordionContent {
-    padding: 0 12px;
+    // padding: 0 12px;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
