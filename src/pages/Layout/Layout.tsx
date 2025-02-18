@@ -7,9 +7,11 @@ import { useDispatch } from "react-redux";
 import { mainActions } from "../../providers/StoreProvider/slice/mainSlice";
 import { myOrderActions } from "../../providers/StoreProvider/slice/myOrderSlice";
 import { Toaster } from "react-hot-toast";
+import { tasksActions } from "../../providers/StoreProvider/slice/tasksSlice";
+import { lvlActions } from "../../providers/StoreProvider/slice/lvlSlice";
 
 function Layout() {
-  const { mainPageQuery, myOrderQuery } = useAllQuery();
+  const { mainPageQuery, myOrderQuery, allTasksQuery, allLvlQuery } = useAllQuery();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,6 +25,18 @@ function Layout() {
       dispatch(myOrderActions.myOrderData(myOrderQuery.data));
     }
   }, [myOrderQuery.data, dispatch]);
+
+  useEffect(() => {
+    if (allTasksQuery.data) {
+      dispatch(tasksActions.tasksData(allTasksQuery.data))
+    }
+  }, [allTasksQuery.data, dispatch]);
+
+  useEffect(() => {
+    if (allLvlQuery.data) {
+      dispatch(lvlActions.lvlData(allLvlQuery.data))
+    }
+  }, [allLvlQuery.data, dispatch]);
 
   return (
     <div className={style.app}>

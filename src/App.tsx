@@ -3,6 +3,9 @@ import "./styles/global/App.scss";
 import { Route, Routes, useNavigate } from "react-router";
 import { useTelegram } from "./providers/telegram/telegram";
 import { useLocation } from "react-router";
+import ProtectedRouteAction from "./utils/ProtectedRouteAction";
+import ProtectedRouteSkidki from "./utils/ProtectedRouteSkidki";
+import NotPage from "./components/NotPage/NotPage";
 
 const Layout = lazy(() => import("./pages/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -21,6 +24,8 @@ const ListDelivery = lazy(() => import("./pages/Delivery/ListDelivery"));
 const ItemDelivery = lazy(() => import("./pages/Delivery/ItemDelivery"));
 const Services = lazy(() => import("./pages/Services/Services"));
 const ServicesOrder = lazy(() => import("./pages/Services/ServicesOrder"));
+const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
+const Lvling = lazy(() => import("./pages/Lvling/Lvling"));
 
 function App() {
   const { tg } = useTelegram();
@@ -66,16 +71,33 @@ function App() {
             />
             <Route path={"home-calculate"} element={<Calculate />} />
             <Route path={"home-action"} element={<ListAction />} />
-            <Route path={"home-action/:id"} element={<ItemAction />} />
+            <Route
+              path={"home-action/:id"}
+              element={
+                <ProtectedRouteAction>
+                  <ItemAction />
+                </ProtectedRouteAction>
+              }
+            />
             <Route path={"home-skidki"} element={<ListSkidki />} />
-            <Route path={"home-skidki/:id"} element={<ItemSkidki />} />
+            <Route
+              path={"home-skidki/:id"}
+              element={
+                <ProtectedRouteSkidki>
+                  <ItemSkidki />
+                </ProtectedRouteSkidki>
+              }
+            />
             <Route path={"tasks"} element={<Tasks />} />
-            <Route path={"lvl"} element={<Tasks />} />
+            <Route path={"lvl"} element={<Lvling />} />
             <Route path={"services"} element={<Services />} />
             <Route
               path={"services/:id/:category"}
               element={<ServicesOrder />}
             />
+            <Route path={"aboutus"} element={<AboutUs />} />
+            <Route path={"*"} element={<NotPage />} />
+
             <Route path={"aboutus"} element={<Tasks />} />
           </Route>
         </Routes>

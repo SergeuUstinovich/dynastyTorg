@@ -42,7 +42,7 @@ export function Accordion({
             />
           </div>
         </div>
-        <div>{progress}</div>
+        {progress && <div className={styles.boxProgress}>{progress}</div>}
       </Button>
       <div
         className={`${styles.accordionContent} ${isOpen ? styles.open : ""}`}

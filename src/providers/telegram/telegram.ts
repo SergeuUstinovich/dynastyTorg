@@ -11,6 +11,8 @@ declare global {
           onClick: (callback: () => void) => void;
           offClick: (callback: () => void) => void;
         }
+        openTelegramLink: (link: string) => void;
+        openLink: (link: string) => void
       }
     };
   }

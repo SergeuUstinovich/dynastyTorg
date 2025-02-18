@@ -7,3 +7,8 @@ export * from "./ListOrders/ListOrders";
 export * from "./TitlePage/TitlePage";
 export * from "./ItemImgSwiper/ItemImgSwiper";
 export * from "./ServicesList/ServicesList";
+export * from "./ListTasks/ListTasks";
+export * from "./ListTasks/ItemTasks";
+export * from './ListLvl/ListLvl'
+export * from './ProgressBar/ProgressBar'
+export * from './ListLvl/ItemLvl'

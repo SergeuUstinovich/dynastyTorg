@@ -30,7 +30,7 @@ function ListSkidki() {
             >
               {!item.activate ? (
                 <ItemImgSwiper
-                  src={`${api_url}${item.image.image_url}`}
+                  src={`${api_url}${item.image}`}
                   descr={item.text}
                   disable={item.activate}
                   title={item.rang.name}
@@ -39,7 +39,7 @@ function ListSkidki() {
               ) : (
                 <Link className={style.link} to={`/home-skidki/${item.id}`}>
                   <ItemImgSwiper
-                    src={`${api_url}${item.image.image_url}`}
+                    src={`${api_url}/${item.image}`}
                     descr={item.text}
                     disable={item.activate}
                     title={item.rang.name}

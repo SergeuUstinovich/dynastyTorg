@@ -1,0 +1,176 @@
+.listBox {
+  .list {
+    border-radius: 18px;
+    padding: 12px 0px 0px 0px;
+    background: var(--white);
+  }
+
+  .item {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 6px 0;
+    .btn {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      justify-content: space-between;
+      width: 100%;
+      .boxInfo {
+        display: flex;
+        align-items: center;
+        .img {
+          max-width: 44px;
+          max-height: 44px;
+          margin-right: 8px;
+          border: 1px solid var(--bg);
+          border-radius: 8px;
+        }
+
+        .boxTitle {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 140%;
+            color: var(--secondary);
+            text-align: start;
+          }
+
+          .boxValue {
+            display: flex;
+            align-items: center;
+
+            .svgBox {
+              background: var(--primary);
+              border-radius: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 3px;
+              margin-right: 4px;
+
+              .svgServices {
+                max-width: 12px;
+                max-height: 12px;
+              }
+
+              .svgServices path {
+                fill: var(--white);
+              }
+            }
+
+            .descr {
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 140%;
+              color: var(--primary);
+              padding-top: 1px;
+            }
+          }
+        }
+      }
+
+      .boxSvg {
+        border-radius: 8px;
+        padding: 4px;
+        background-color: var(--btn-bg);
+      }
+    }
+  }
+}
+
+.boxSlide {
+  width: 100%;
+  padding-bottom: 76px;
+
+  .slideImg {
+    margin-bottom: 20px;
+  }
+
+  .slidetitle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .boxCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .bgCount {
+      padding: 4px 8px;
+      background: rgba(0, 122, 255, 0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .svgBox {
+      display: flex;
+      align-items: center;
+      padding: 3px;
+      background: var(--primary);
+      margin-right: 4px;
+      border-radius: 40px;
+
+      .svgServices {
+        max-width: 16px;
+        max-height: 16px;
+      }
+
+      .svgServices path {
+        fill: var(--white);
+      }
+    }
+
+    .descr {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 140%;
+      text-align: center;
+      color: var(--primary);
+    }
+  }
+
+  .boxBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: fixed;
+    bottom: 0;
+    left: 15px;
+    width: calc(100% - 30px);
+    background-color: var(--white);
+    padding-bottom: 24px;
+
+    .checkBtn {
+      border: 1px solid var(--primary);
+      border-radius: 16px;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--primary);
+      width: 50%;
+      background-color: var(--white);
+    }
+
+    .takeBtn {
+      background: var(--primary);
+      border-radius: 16px;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--white);
+      width: 50%;
+    }
+  }
+}

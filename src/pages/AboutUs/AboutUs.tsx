@@ -1,0 +1,79 @@
+import ImageContainer from "../../utils/ImageContainer";
+import style from "./AboutUs.module.scss";
+import img from "../../assets/png/aboutUs.png";
+import { Accordion } from "../../ui";
+import { dataAbout } from "./dataAbout";
+
+function AboutUs() {
+  return (
+    <div>
+      <div className={style.boxInfo}>
+        <h2 className={style.titleInfo}>Наша компания</h2>
+        <div className={style.boxImg}>
+          <ImageContainer className={style.imgInfo} src={img} x1x16 />
+        </div>
+        <p style={{marginBottom: '8px'}} className={style.descrInfo}>
+          <b>ДинастияТорг</b> - команда профессионалов, специализирующаяся на
+          организации и сопровождении закупок товаров напрямую у производителей
+          в Китае.
+        </p>
+        <p className={style.descrInfo}>
+          Наш подход основан на многолетнем опыте, глубоком знании мирового
+          рынка и стремлении максимально упростить для вас процесс
+          взаимодействия с зарубежными поставщиками.
+        </p>
+      </div>
+      <div className={style.boxAccor}>
+        <Accordion title={'Почему выбирают нас?'}>
+          <ul className={style.list}>
+            {dataAbout.whyUs.map((item, index) => (
+              <li className={style.item} key={index}>
+                  <h3 className={style.title}>
+                  {index + 1}. {item.title}
+                </h3>
+                <p className={style.descr}>{item.descr}</p>
+              </li>
+            ))}
+          </ul>
+        </Accordion>
+        <Accordion title={"Мы в цифрах?"}>
+          <ul className={style.list}>
+            {dataAbout.numbers.map((item, index) => (
+              <li className={style.item} key={index}>
+                <h3 className={style.title}>
+                  {item.title}
+                </h3>
+                <p className={style.descr}>{item.descr}</p>
+              </li>
+            ))}
+          </ul>
+        </Accordion>
+        <Accordion title={"Процесс взаимодействия с нами"}>
+          <ul className={style.list}>
+            {dataAbout.process.map((item, index) => (
+              <li className={style.item} key={index}>
+                <h3 className={style.title}>
+                  {index + 1}. {item.title}
+                </h3>
+                <p className={style.descr}>{item.descr}</p>
+              </li>
+            ))}
+          </ul>
+        </Accordion>
+        <Accordion title={'Основные страны логистики'}>
+          <ul className={style.list}>
+            {dataAbout.country.map((item, index) => (
+              <li className={style.item} key={index}>
+                <h3 className={style.title}>
+                  {index + 1}. {item.title}
+                </h3>
+              </li>
+            ))}
+          </ul>
+        </Accordion>
+      </div>
+    </div>
+  );
+}
+
+export default AboutUs;
