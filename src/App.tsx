@@ -20,7 +20,7 @@ const Profile = lazy(() => import("./pages/Profile/Profile"));
 const ListDelivery = lazy(() => import("./pages/Delivery/ListDelivery"));
 const ItemDelivery = lazy(() => import("./pages/Delivery/ItemDelivery"));
 const Services = lazy(() => import("./pages/Services/Services"));
-const ServicesOrder = lazy(() => import("./pages/ServicesOrder/ServicesOrder"));
+const ServicesOrder = lazy(() => import("./pages/Services/ServicesOrder"));
 
 function App() {
   const { tg } = useTelegram();
@@ -72,7 +72,10 @@ function App() {
             <Route path={"tasks"} element={<Tasks />} />
             <Route path={"lvl"} element={<Tasks />} />
             <Route path={"services"} element={<Services />} />
-            <Route path={"services/:id"} element={<Services />} />
+            <Route
+              path={"services/:id/:category"}
+              element={<ServicesOrder />}
+            />
             <Route path={"aboutus"} element={<Tasks />} />
           </Route>
         </Routes>

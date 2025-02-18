@@ -20,6 +20,10 @@
           font-size: 18px;
           line-height: 130%;
           color: var(--secondary);
+
+          &.left {
+            text-align: left;
+          }
         }
 
         .descr {

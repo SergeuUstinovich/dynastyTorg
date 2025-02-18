@@ -5,3 +5,50 @@
   padding: 4px;
   margin-bottom: 8px;
 }
+
+.servicesUpper {
+  border-radius: 18px;
+  padding: 12px;
+  background: var(--white);
+  margin-bottom: 8px;
+}
+
+.servicesTitle {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31.2px;
+}
+
+.servicesDescription {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+.servicesImage {
+  margin-bottom: 8px;
+}
+
+.accordion {
+  margin-bottom: 8px;
+}
+
+.accordItem {
+  margin-bottom: 8px;
+
+  .accordItemTitle {
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: #3461e0;
+  }
+
+  .accordItemText {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: #0a0a0a;
+  }
+}

@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import styles from "./Accordion.module.scss"; // Импортируйте свои стили
+import styles from "./Accordion.module.scss";
 import { Button } from "../Button";
 import { ArrowSvg } from "../../assets/svg";
 
@@ -8,6 +8,8 @@ interface AccordionProps {
   children: ReactNode;
   descr?: string;
   progress?: ReactNode;
+  className?: string;
+  isLeft?: boolean;
 }
 
 export function Accordion({
@@ -15,6 +17,8 @@ export function Accordion({
   children,
   descr,
   progress,
+  className,
+  isLeft,
 }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,11 +27,13 @@ export function Accordion({
   };
 
   return (
-    <div className={styles.accordionItem}>
+    <div className={`${styles.accordionItem} ${className}`}>
       <Button className={styles.accordionTitle} onClick={toggleAccordion}>
         <div className={styles.boxTitle}>
           <div className={styles.infoTitle}>
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={`${isLeft && styles.left} ${styles.title}`}>
+              {title}
+            </h2>
             <p className={styles.descr}>{descr}</p>
           </div>
           <div className={styles.boxSvg}>
@@ -36,9 +42,7 @@ export function Accordion({
             />
           </div>
         </div>
-        <div>
-            {progress}
-        </div>
+        <div>{progress}</div>
       </Button>
       <div
         className={`${styles.accordionContent} ${isOpen ? styles.open : ""}`}
