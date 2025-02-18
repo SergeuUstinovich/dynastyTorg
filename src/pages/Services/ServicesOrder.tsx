@@ -7,6 +7,7 @@ import {
   servicesOrderPackageArr,
 } from "./servicesData";
 import { Accordion } from "../../ui";
+import ImageContainer from "../../utils/ImageContainer";
 
 const ServicesOrder = () => {
   const [servicesArr, setServicesArr] = useState<arrDeliveryType>();
@@ -30,10 +31,11 @@ const ServicesOrder = () => {
     <section className={style.servicesOrder}>
       <div className={style.servicesUpper}>
         <h1 className={style.servicesTitle}>{servicesArr?.title}</h1>
-        <img
+        <ImageContainer
           className={style.servicesImage}
-          src={servicesArr?.img}
+          src={servicesArr ? servicesArr?.img : ""}
           alt={servicesArr?.title}
+          x1x16={false}
         />
         <p className={style.servicesDescription}>{servicesArr?.description}</p>
       </div>
@@ -52,6 +54,19 @@ const ServicesOrder = () => {
                     {`${item.id}. `}
                     {item.title}
                   </h3>
+                  {item.price && (
+                    <p className={style.infoDescr}>
+                      <b className={style.infoPrice}>Цена: </b>
+                      {item.price}
+                    </p>
+                  )}
+                  {item.term && (
+                    <p className={style.infoDescr}>
+                      <b className={style.infoPrice}>Сроки доставки: </b>
+                      {item.term}
+                    </p>
+                  )}
+
                   {item.descr.map((innerItem, innerIndex) => (
                     <p key={innerIndex} className={style.accordItemText}>
                       {innerItem.text}
