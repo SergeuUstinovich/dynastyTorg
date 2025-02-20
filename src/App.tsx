@@ -97,8 +97,6 @@ function App() {
             />
             <Route path={"aboutus"} element={<AboutUs />} />
             <Route path={"*"} element={<NotPage />} />
-
-            <Route path={"aboutus"} element={<Tasks />} />
           </Route>
         </Routes>
       </Suspense>

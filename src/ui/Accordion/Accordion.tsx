@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styles from "./Accordion.module.scss";
 import { Button } from "../Button";
 import { ArrowSvg } from "../../assets/svg";
@@ -10,6 +10,7 @@ interface AccordionProps {
   progress?: ReactNode;
   className?: string;
   isLeft?: boolean;
+  active?: boolean;
 }
 
 export function Accordion({
@@ -19,12 +20,18 @@ export function Accordion({
   progress,
   className,
   isLeft,
+  active
 }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if(active)
+    setIsOpen(true)
+  }, [active])
 
   return (
     <div className={`${styles.accordionItem} ${className}`}>

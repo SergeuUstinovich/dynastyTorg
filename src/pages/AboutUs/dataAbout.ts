@@ -1,3 +1,8 @@
+import russian from '../../assets/svg/russia.svg'
+import kazakhstan from '../../assets/svg/kazakhstan.svg'
+import belarus from '../../assets/svg/belarus.svg'
+import uzbekistan from '../../assets/svg/uzbekistan.svg'
+
 export const dataAbout = {
   whyUs: [
     {
@@ -73,18 +78,22 @@ export const dataAbout = {
     {
       title: "Россия",
       descr: "",
+      img: russian,
     },
     {
       title: "Казахстан",
       descr: "",
+      img: kazakhstan,
     },
     {
       title: "Беларусь",
       descr: "",
+      img: belarus,
     },
     {
       title: "Узбекистан",
       descr: "",
+      img: uzbekistan,
     },
   ],
 };

@@ -28,7 +28,7 @@ function ItemDelivery() {
             <div className={style.boxImg}>
               <ImageContainer
                 className={style.imgInfo}
-                src={deliveryArr.img}
+                src={deliveryArr.imgInfo}
                 x1x16
               />
             </div>

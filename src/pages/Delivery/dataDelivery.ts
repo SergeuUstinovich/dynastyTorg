@@ -2,10 +2,15 @@ import autoDostavka from "../../assets/png/autoDostavka.png";
 import seaDostavka from "../../assets/png/seaDostavka.png";
 import flightDostavka from "../../assets/png/flightDostavka.png";
 import jdDostavka from "../../assets/png/jdDostavka.png";
+import autoDostavkaInfo from '../../assets/png/autoDostavkaInfo.png'
+import seaDostavkaInfo from '../../assets/png/seaDostavkaInfo.png'
+import flightDostavkaInfo from '../../assets/png/flightDostavkaInfo.png'
+import jdDostavkaInfo from '../../assets/png/jdDostavkaInfo.png'
 
 export interface arrDeliveryType {
   id: string;
   img: string;
+  imgInfo: string;
   title: string;
   description: string;
   format: {
@@ -38,6 +43,7 @@ export const arrDelivery: arrDeliveryType[] = [
   {
     id: "1",
     img: autoDostavka,
+    imgInfo: autoDostavkaInfo,
     title: "Автодоставка",
     description:
       "Представьте, что вы получаете груз в точном соответствии со сроками и без лишних хлопот. Мы делаем это возможным благодаря продуманной системе автоперевозок, ориентированной на ваши нужды и приоритеты.",
@@ -145,6 +151,7 @@ export const arrDelivery: arrDeliveryType[] = [
   {
     id: "2",
     img: seaDostavka,
+    imgInfo: seaDostavkaInfo,
     title: "Морская доставка",
     description:
       "Представьте, что вы получаете крупные партии товаров из Китая без переплат и лишней суеты. Морские перевозки от «ДинастияТорг» — это продуманная логистика, привлекательные тарифы и уверенность в каждой детали.",
@@ -258,6 +265,7 @@ export const arrDelivery: arrDeliveryType[] = [
   {
     id: "3",
     img: flightDostavka,
+    imgInfo: flightDostavkaInfo,
     title: "Авиадоставка",
     description:
       "Представьте, что у вас есть возможность получить груз из Китая максимально быстро, не переплачивая за дорогие решения. Авиаперевозки от «ДинастияТорг» — это продуманная логистика, стабильные тарифы и контроль на каждом этапе, чтобы ваш бизнес всегда работал без сбоев.",
@@ -366,6 +374,7 @@ export const arrDelivery: arrDeliveryType[] = [
   {
     id: "4",
     img: jdDostavka,
+    imgInfo: jdDostavkaInfo,
     title: "Ж/Д доставка",
     description:
       "Представьте, что вы можете безопасно и недорого доставлять большие партии товаров, не рискуя качеством и соблюдением сроков. Железнодорожная логистика от «ДинастияТорг» — это продуманные маршруты, прозрачные тарифы и грамотное сопровождение на всём пути.",

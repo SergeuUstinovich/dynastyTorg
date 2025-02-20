@@ -38,6 +38,11 @@
     flex-direction: column;
     gap: 8px;
     .item {
+
+      .titleBox {
+        display: flex;
+        align-items: center;
+      }
       .title {
         font-weight: 700;
         font-size: 14px;
