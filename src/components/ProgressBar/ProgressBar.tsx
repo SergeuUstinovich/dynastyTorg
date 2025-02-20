@@ -15,7 +15,7 @@ export function ProgressBar({
     return (
       <div className={style.progressBar}>
         <div className={style.progressBarFill} style={{ width: `${0}%` }}></div>
-        <div className={style.infoKG}>{0}кг</div>
+        <div className={style.infoKG}>{0} кг</div>
       </div>
     );
   }
