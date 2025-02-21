@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ServicesList, SwitchOption, TitlePage } from "../../components";
 import style from "./Services.module.scss";
 import { serviceDelivery, servicesPackage } from "./servicesData";
+import { useLocation } from "react-router-dom";
 
 type FilterType = "active" | "package";
 
 const Services = () => {
   const [filterType, setFilterType] = useState<FilterType>("active");
+  const location = useLocation();
+
+  useEffect(() => {
+    const category = location.state?.category;
+    if (category === "упаковка") {
+      setFilterType("package");
+    } else {
+      setFilterType("active");
+    }
+  }, [location.state]);
 
   return (
     <section className="services">
@@ -25,6 +36,7 @@ const Services = () => {
       </div>
       <ServicesList
         data={filterType === "active" ? serviceDelivery : servicesPackage}
+        categoryParams={filterType}
       />
     </section>
   );

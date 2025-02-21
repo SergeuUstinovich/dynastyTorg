@@ -4,8 +4,8 @@ import insuranceDelivery from "../../assets/png/insuranceX2Delivery.webp";
 import searchDelivery from "../../assets/png/searchX2Delivery.webp";
 import supplierDelivery from "../../assets/png/supplierX2Delivery.webp";
 import flightDelivery from "../../assets/png/flightX2Delivery.webp";
-import jdDelivery from "../../assets/png/jdDostavka.png";
-import autoDelivery from "../../assets/png/autoDostavka.png";
+import jdDelivery from "../../assets/png/jdX2DeliveryOps.webp";
+import autoDelivery from "../../assets/png/autoX2DeliveryOps.webp";
 import seaDelivery from "../../assets/png/seaX2Delivery.webp";
 import productionDelivery from "../../assets/png/productionX2Delivery.webp";
 import orderDelivery from "../../assets/png/orderX2Delivery.webp";
@@ -916,7 +916,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
         accordInner: [
           {
             id: "1",
-            title: "Стандартная авиа",
+            title: "Стандартная",
             term: "35–45 дней",
             price: "от 0.7 $/кг",
             descr: [
@@ -1260,31 +1260,6 @@ export const servicesOrderArr: arrDeliveryType[] = [
             descr: [
               {
                 text: "Мы берём на себя все этапы, от поиска контейнеров до оформления таможенных документов.",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "9",
-    img: "",
-    category: "доставка",
-    title: "Авиадоставка",
-    description:
-      "Представьте, что у вас есть возможность получить груз из Китая максимально быстро, не переплачивая за дорогие решения. Авиаперевозки от «ДинастияТорг» — это продуманная логистика, стабильные тарифы и контроль на каждом этапе, чтобы ваш бизнес всегда работал без сбоев.",
-    whatTransport: [
-      {
-        title: "Наши форматы авиадоставки",
-        accordInner: [
-          {
-            id: "1",
-            title: "Стандартная авиа",
-            price: "",
-            descr: [
-              {
-                text: "",
               },
             ],
           },
@@ -1956,7 +1931,6 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
         accordInner: [
           {
             id: "1",
-            price: "$2 за коробку",
             title: "Комплексный подход:",
             descr: [
               {
@@ -1986,12 +1960,22 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
       "Эта комплексная упаковка обеспечивает высочайший уровень защиты для вашего груза, минимизируя риски повреждений во время транспортировки. Мы рекомендуем это решение для перевозки особо ценных или уязвимых товаров, чтобы гарантировать их сохранность и целостность по прибытии на место назначения.",
     whatTransport: [
       {
-        title: "Метод упаковки:",
+        title: "Цены",
         accordInner: [
           {
             id: "1",
             price:
               "8$ за коробку стандартного размера и веса. Если коробка маленькая, возможно объединение нескольких единиц в одну упаковку.",
+            title: "Обрешетка:",
+            descr: [{ text: "" }],
+          },
+        ],
+      },
+      {
+        title: "Метод упаковки:",
+        accordInner: [
+          {
+            id: "1",
             title: "Обрешетка:",
             descr: [
               {
@@ -2001,7 +1985,6 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
           },
           {
             id: "2",
-            price: "",
             title: "Коробка:",
             descr: [
               {
@@ -2011,7 +1994,6 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
           },
           {
             id: "3",
-            price: "",
             title: "Мешок:",
             descr: [
               {
@@ -2021,7 +2003,6 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
           },
           {
             id: "4",
-            price: "",
             title: "Скотч:",
             descr: [
               {
@@ -2042,11 +2023,25 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
       "Мы предлагаем комплексное решение для упаковки грузов, которое включает использование паллета, картонных коробок, пленки, лент и скотча. Эта упаковка идеально подходит для обеспечения защиты и безопасности товаров во время их хранения и транспортировки. Этот метод упаковки идеален для транспортировки различных товаров, предоставляя максимальную защиту от механических повреждений и воздействия окружающей среды. Вся упаковка проектирована для обеспечения безопасности и сохранности груза на всех этапах транспортировки.",
     whatTransport: [
       {
-        title: "Метод упаковки:",
+        title: "Цены",
         accordInner: [
           {
             id: "1",
             price: "30$ за штуку для груза стандартного размера и веса.",
+            title: "Паллет",
+            descr: [
+              {
+                text: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Метод упаковки:",
+        accordInner: [
+          {
+            id: "1",
             title: "Паллет: ",
             descr: [
               {
@@ -2103,11 +2098,25 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
       "Этот комплексный способ упаковки обеспечивает высокий уровень защиты и безопасности для вашего груза, оптимизируя процесс его хранения и транспортировки. Эта методика упаковки предназначена для обеспечения максимальной сохранности и защиты товаров, минимизируя риски потерь и повреждений, и рекомендуется для перевозки ценных, хрупких или особо важных грузов.",
     whatTransport: [
       {
-        title: "Метод упаковки",
+        title: "Цены",
         accordInner: [
           {
             id: "1",
             price: "45$ за штуку (стандартный размер и вес)",
+            title: "Паллет:",
+            descr: [
+              {
+                text: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Метод упаковки",
+        accordInner: [
+          {
+            id: "1",
             title: "Паллет:",
             descr: [
               {
@@ -2164,11 +2173,25 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
       "Эта упаковка идеально подходит для транспортировки чувствительных, ценных или тяжелых предметов, требующих особой защиты во время перевозки. Эта комбинация упаковочных материалов и технологий обеспечивает высокий уровень защиты для вашего груза, гарантируя его сохранность и целостность при доставке. Методика рекомендуется для отправки тяжелых, хрупких или высокоценных товаров, где требуется максимальное внимание к безопасности груза. Эта упаковка идеально подходит для транспортировки чувствительных, ценных или тяжелых предметов, требующих особой защиты во время перевозки.",
     whatTransport: [
       {
-        title: "Метод упаковки:",
+        title: "Цены",
         accordInner: [
           {
             id: "1",
             price: "60$ за кубический метр (стандартный размер и вес)",
+            title: "Деревянный ящик:",
+            descr: [
+              {
+                text: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Метод упаковки:",
+        accordInner: [
+          {
+            id: "1",
             title: "Деревянный ящик:",
             descr: [
               {
