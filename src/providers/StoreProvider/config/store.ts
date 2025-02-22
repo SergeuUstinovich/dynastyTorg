@@ -4,7 +4,7 @@ import { mainReducer } from "../slice/mainSlice";
 import { myOrderReducer } from "../slice/myOrderSlice";
 import { tasksReducer } from "../slice/tasksSlice";
 import { lvlReducer } from "../slice/lvlSlice";
-
+import { serviceReducer } from "../slice/serviceSlice";
 
 export function createReduxStore(initialState?: StateScheme) {
   const rootReducer: ReducersMapObject<StateScheme> = {
@@ -12,6 +12,7 @@ export function createReduxStore(initialState?: StateScheme) {
     myOrderInfo: myOrderReducer,
     allTasks: tasksReducer,
     allLvl: lvlReducer,
+    service: serviceReducer,
   };
 
   return configureStore({

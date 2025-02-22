@@ -11,7 +11,6 @@ interface IServicesData {
 
 interface IServicesListProps {
   data: Array<IServicesData>;
-  categoryParams: "active" | "package";
 }
 
 export const ServicesList = ({ data }: IServicesListProps) => {
@@ -22,7 +21,6 @@ export const ServicesList = ({ data }: IServicesListProps) => {
           <Link
             className={style.infoLink}
             to={`/services/${element.id}/${element.category}`}
-            state={console.log({ category: element.category })}
           >
             <ImageContainer src={element.img} x1x16={false} />
             <span className={style.infoText}>{element.text}</span>

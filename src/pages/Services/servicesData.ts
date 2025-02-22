@@ -53,85 +53,85 @@ export const serviceDelivery: IServiceDelivery[] = [
     id: "1",
     text: "Доставка под ключ",
     img: busketDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "2",
     text: "Фото и видеоотчёт вашего товара",
     img: photoDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "3",
     text: "Страхование грузов",
     img: insuranceDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "4",
     text: "Поиск товара и фабрики",
     img: searchDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "5",
     text: "Проверка поставщика",
     img: supplierDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "6",
     text: "Авиадоставка",
     img: flightDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "7",
     text: "Ж/Д доставка",
     img: jdDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "8",
     text: "Автодоставка",
     img: autoDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "9",
     text: "Морская доставка",
     img: seaDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "10",
     text: "Производство OEM/ODM",
     img: productionDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "11",
     text: "Как оформить заказ?",
     img: orderDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "12",
     text: "Оплата поставщику",
     img: paymentDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "13",
     text: "Складирование и доставка",
     img: storageDelivery,
-    category: "доставка",
+    category: "delivery",
   },
   {
     id: "14",
     text: "Таможенное оформление",
     img: customsDelivery,
-    category: "доставка",
+    category: "delivery",
   },
 ];
 
@@ -140,37 +140,37 @@ export const servicesPackage: IServiceDelivery[] = [
     id: "1",
     text: "Коробка",
     img: caseDelovery,
-    category: "упаковка",
+    category: "package",
   },
   {
     id: "2",
     text: "Деревянная обрешётка",
     img: sheatingDelovery,
-    category: "упаковка",
+    category: "package",
   },
   {
     id: "3",
     text: "Паллет",
     img: palletDelovery,
-    category: "упаковка",
+    category: "package",
   },
   {
     id: "4",
     text: "Паллет + деревянная обрешётка",
     img: palletSheatingDelovery,
-    category: "упаковка",
+    category: "package",
   },
   {
     id: "5",
     text: "Фанерный ящик",
     img: boxDelovery,
-    category: "упаковка",
+    category: "package",
   },
   {
     id: "6",
     text: "Контейнер",
     img: contDelovery,
-    category: "упаковка",
+    category: "package",
   },
 ];
 
@@ -178,7 +178,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "1",
     img: busketDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "Доставка под ключ",
     description:
       "Полное решение для вашего бизнеса: от поиска поставщика и контроля качества до таможенного оформления и доставки на ваш склад. Мы берем на себя весь цикл логистики: начиная с момента подбора производителя, переговоров по ценам и выкупа товара и заканчивая доставкой «до двери». Вы получаете готовое решение без каких-либо лишних хлопот.",
@@ -296,7 +296,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
     id: "2",
     img: photoDelivery,
     title: "Фотоотчет",
-    category: "доставка",
+    category: "delivery",
     description:
       "Представьте, что вы видите весь путь своего товара — от момента сборки или упаковки на фабрике до финальной доставки на склад. Именно такую прозрачность даёт фото- и видеоотчёт от «ДинастияТорг». Мы фиксируем каждую ключевую точку логистической цепочки, чтобы вы были уверены в качестве, состоянии и сохранности груза.",
     whatTransport: [
@@ -371,7 +371,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
     id: "3",
     img: insuranceDelivery,
     title: "Страхование",
-    category: "доставка",
+    category: "delivery",
     description:
       "Представьте, что вы полностью уверены в сохранности своего товара даже в случае непредвиденных обстоятельств. Страхование груза — это разумная мера, позволяющая минимизировать риски и избежать финансовых потерь, которые могут возникнуть в процессе транспортировки. С «ДинастияТорг» вы получаете не просто логистику, а комплексный подход к безопасности вашего имущества.",
     whatTransport: [
@@ -481,7 +481,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
     id: "4",
     img: searchDelivery,
     title: "Поиск товаров и фабрик",
-    category: "доставка",
+    category: "delivery",
     description:
       "Представьте, что вы хотите найти действительно надёжного поставщика: с выгодными ценами, достойным качеством и стабильными объёмами производства. «ДинастияТорг» берёт на себя эти хлопоты, используя многолетний опыт работы с международными рынками. Мы анализируем ваш запрос, отбираем фабрики и товары, проверяем репутацию производителей и заключаем сделки на максимально выгодных условиях.",
     whatTransport: [
@@ -619,7 +619,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
     id: "5",
     img: supplierDelivery,
     title: "Проверка поставщика",
-    category: "доставка",
+    category: "delivery",
     description:
       "Хотите знать, что ваш будущий партнёр действительно надёжен и соответствует всем требованиям рынка? «ДинастияТорг» берёт на себя задачу проверки поставщика, исключая риски для вашего бизнеса.",
     whatTransport: [
@@ -778,7 +778,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "6",
     img: flightDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "Авиадоставка",
     description:
       "Представьте, что у вас есть возможность получить груз из Китая максимально быстро, не переплачивая за дорогие решения. Авиаперевозки от «ДинастияТорг» — это продуманная логистика, стабильные тарифы и контроль на каждом этапе, чтобы ваш бизнес всегда работал без сбоев.",
@@ -906,7 +906,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "7",
     img: jdDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "Ж/Д доставка",
     description:
       "Представьте, что вы можете безопасно и недорого доставлять большие партии товаров, не рискуя качеством и соблюдением сроков. Железнодорожная логистика от «ДинастияТорг» — это продуманные маршруты, прозрачные тарифы и грамотное сопровождение на всём пути.",
@@ -1023,7 +1023,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "8",
     img: autoDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "Автодоставка",
     description:
       "Представьте, что вы получаете груз в точном соответствии со сроками и без лишних хлопот. Мы делаем это возможным благодаря продуманной системе автоперевозок, ориентированной на ваши нужды и приоритеты.",
@@ -1151,7 +1151,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "9",
     img: seaDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "Морская доставка",
     description:
       "Представьте, что вы получаете крупные партии товаров из Китая без переплат и лишней суеты. Морские перевозки от «ДинастияТорг» — это продуманная логистика, привлекательные тарифы и уверенность в каждой детали.",
@@ -1270,7 +1270,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "10",
     img: productionDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "OEM/ODM-производство",
     description:
       "Представьте, что вы можете предлагать на рынке товары под собственной торговой маркой, не вкладывая миллионы в создание собственных фабрик. Благодаря OEM (Original Equipment Manufacturer) и ODM (Original Design Manufacturer) производству вы получаете готовые продукты с вашим логотипом и дизайном, а «ДинастияТорг» берёт на себя все организационные аспекты.",
@@ -1362,7 +1362,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "11",
     img: orderDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "Как оформить заказ?",
     description:
       "Представьте, что вам нужно заказать товары из-за рубежа, но вы не хотите тратить время на изучение правил ВЭД, оформлять десятки документов и договариваться с несколькими подрядчиками. «ДинастияТорг» берёт всё под свой контроль: от момента, когда вы описываете желаемый товар, до финальной доставки в ваши руки.",
@@ -1431,7 +1431,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   {
     id: "12",
     img: paymentDelivery,
-    category: "доставка",
+    category: "delivery",
     title: "Оплата производителю",
     description:
       "Вообразите, что вы можете рассчитаться с иностранным поставщиком любым удобным для вас способом: рублями, долларами, а при необходимости и криптовалютой — при этом не вникая в тонкости международных переводов, не теряя деньги на невыгодных курсах и не опасаясь блокировок. «ДинастияТорг» упрощает процесс оплаты производителю, беря на себя все риски и бюрократические моменты.",
@@ -1536,7 +1536,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
     id: "13",
     img: storageDelivery,
     title: "Складирование",
-    category: "доставка",
+    category: "delivery",
     description: "",
     whatTransport: [
       {
@@ -1687,7 +1687,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
     img: customsDelivery,
     title: "Таможенное оформление",
     description: "",
-    category: "доставка",
+    category: "delivery",
     whatTransport: [
       {
         title: "Зачем нужна правильная таможенная очистка?",
@@ -1844,7 +1844,7 @@ export const servicesOrderArr: arrDeliveryType[] = [
   //   {
   //     id: "15",
   //     img: "",
-  //     category: "доставка",
+  //     category: "delivery",,
   //     title: "Специализированное хранение и доставка",
   //     description: "",
   //     whatTransport: [
@@ -1907,7 +1907,7 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
     id: "1",
     title: "Коробка",
     img: caseDelovery,
-    category: "упаковка",
+    category: "package",
     description:
       "Наша упаковка: Коробка+Мешок+Скотч включает в себя прочную коробку, тканевый мешок и надежно закрепленный скотч. Тканевый мешок обеспечивает дополнительную защиту от пыли, влаги и механических повреждений во время транспортировки. Этот комплексный подход обеспечивает полную защиту вашего груза на протяжении всего пути доставки.",
     whatTransport: [
@@ -1955,7 +1955,7 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
     id: "2",
     title: "ОБРЕШЕТКА + КОРОБКА + МЕШОК + СКОТЧ",
     img: sheatingDelovery,
-    category: "упаковка",
+    category: "package",
     description:
       "Эта комплексная упаковка обеспечивает высочайший уровень защиты для вашего груза, минимизируя риски повреждений во время транспортировки. Мы рекомендуем это решение для перевозки особо ценных или уязвимых товаров, чтобы гарантировать их сохранность и целостность по прибытии на место назначения.",
     whatTransport: [
@@ -2018,7 +2018,7 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
     id: "3",
     title: "ПАЛЛЕТ + КОРОБКА + ПЛЕНКА + ЛЕНТЫ + СКОТЧ",
     img: palletDelovery,
-    category: "упаковка",
+    category: "package",
     description:
       "Мы предлагаем комплексное решение для упаковки грузов, которое включает использование паллета, картонных коробок, пленки, лент и скотча. Эта упаковка идеально подходит для обеспечения защиты и безопасности товаров во время их хранения и транспортировки. Этот метод упаковки идеален для транспортировки различных товаров, предоставляя максимальную защиту от механических повреждений и воздействия окружающей среды. Вся упаковка проектирована для обеспечения безопасности и сохранности груза на всех этапах транспортировки.",
     whatTransport: [
@@ -2093,7 +2093,7 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
     id: "4",
     title: "ПАЛЛЕТ + ОБРЕШЕТКИ + КОРОБКИ + ПЛЕНКИ + ЛЕНТЫ + СКОТЧ",
     img: palletSheatingDelovery,
-    category: "упаковка",
+    category: "package",
     description:
       "Этот комплексный способ упаковки обеспечивает высокий уровень защиты и безопасности для вашего груза, оптимизируя процесс его хранения и транспортировки. Эта методика упаковки предназначена для обеспечения максимальной сохранности и защиты товаров, минимизируя риски потерь и повреждений, и рекомендуется для перевозки ценных, хрупких или особо важных грузов.",
     whatTransport: [
@@ -2168,7 +2168,7 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
     id: "5",
     title: "ДЕРЕВЯННЫЙ ЯЩИК + ЛЕНТЫ + СКОТЧ",
     img: boxDelovery,
-    category: "упаковка",
+    category: "package",
     description:
       "Эта упаковка идеально подходит для транспортировки чувствительных, ценных или тяжелых предметов, требующих особой защиты во время перевозки. Эта комбинация упаковочных материалов и технологий обеспечивает высокий уровень защиты для вашего груза, гарантируя его сохранность и целостность при доставке. Методика рекомендуется для отправки тяжелых, хрупких или высокоценных товаров, где требуется максимальное внимание к безопасности груза. Эта упаковка идеально подходит для транспортировки чувствительных, ценных или тяжелых предметов, требующих особой защиты во время перевозки.",
     whatTransport: [
@@ -2224,7 +2224,7 @@ export const servicesOrderPackageArr: arrDeliveryType[] = [
   {
     id: "6",
     title: "УПАКОВКА И ТРАНСПОРТИРОВКА В КОНТЕЙНЕРАХ",
-    category: "упаковка",
+    category: "package",
     img: contDelovery,
     description:
       "Использование контейнеров — это один из самых популярных и эффективных методов для транспортировки широкого спектра товаров по всему миру. Контейнеры обеспечивают высокую степень защиты груза от внешних воздействий и позволяют оптимизировать логистику за счет стандартизированных размеров и легкости погрузочно-разгрузочных работ. ",

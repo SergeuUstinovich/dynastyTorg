@@ -1,42 +1,41 @@
-import { useEffect, useState } from "react";
 import { ServicesList, SwitchOption, TitlePage } from "../../components";
 import style from "./Services.module.scss";
+import { serviceActions } from "../../providers/StoreProvider/slice/serviceSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getServiceSelector } from "../../providers/StoreProvider/selectors/getService";
 import { serviceDelivery, servicesPackage } from "./servicesData";
-import { useLocation } from "react-router-dom";
-
-type FilterType = "active" | "package";
 
 const Services = () => {
-  const [filterType, setFilterType] = useState<FilterType>("active");
-  const location = useLocation();
+  const dispatch = useDispatch();
+  const stateParams = useSelector(getServiceSelector);
 
-  useEffect(() => {
-    const category = location.state?.category;
-    if (category === "упаковка") {
-      setFilterType("package");
-    } else {
-      setFilterType("active");
-    }
-  }, [location.state]);
+  const handleSetDelivery = () => {
+    dispatch(serviceActions.setService("delivery"));
+  };
+
+  const handleSetPackage = () => {
+    dispatch(serviceActions.setService("package"));
+  };
+
+  console.log(stateParams);
 
   return (
     <section className="services">
       <TitlePage title={"Услуги"} />
       <div className={style.switcher}>
         <SwitchOption
-          isActive={filterType === "active"}
+          isActive={stateParams === "delivery"}
           title={"Доставка"}
-          onClick={() => setFilterType("active")}
+          onClick={handleSetDelivery}
         />
         <SwitchOption
-          isActive={filterType === "package"}
+          isActive={stateParams === "package"}
           title={"Виды упаковок"}
-          onClick={() => setFilterType("package")}
+          onClick={handleSetPackage}
         />
       </div>
       <ServicesList
-        data={filterType === "active" ? serviceDelivery : servicesPackage}
-        categoryParams={filterType}
+        data={stateParams === "delivery" ? serviceDelivery : servicesPackage}
       />
     </section>
   );
