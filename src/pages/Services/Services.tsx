@@ -17,8 +17,6 @@ const Services = () => {
     dispatch(serviceActions.setService("package"));
   };
 
-  console.log(stateParams);
-
   return (
     <section className="services">
       <TitlePage title={"Услуги"} />
