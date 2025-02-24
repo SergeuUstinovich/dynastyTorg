@@ -1,7 +1,8 @@
-import russian from '../../assets/svg/russia.svg'
-import kazakhstan from '../../assets/svg/kazakhstan.svg'
-import belarus from '../../assets/svg/belarus.svg'
-import uzbekistan from '../../assets/svg/uzbekistan.svg'
+import russian from "../../assets/svg/russia.svg";
+import kazakhstan from "../../assets/svg/kazakhstan.svg";
+import belarus from "../../assets/svg/belarus.svg";
+import uzbekistan from "../../assets/svg/uzbekistan.svg";
+import imgTest from '../../assets/png/testAbout.png'
 
 export const dataAbout = {
   whyUs: [
@@ -96,4 +97,5 @@ export const dataAbout = {
       img: uzbekistan,
     },
   ],
+  photo: [{ img: imgTest }, { img: imgTest }, { img: imgTest }, { img: imgTest }],
 };

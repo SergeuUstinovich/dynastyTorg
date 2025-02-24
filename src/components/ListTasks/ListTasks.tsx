@@ -91,6 +91,7 @@ export function ListTasks({ arr }: ListTasksProps) {
                 img={`${api_url}${item.task.image.image_url}`}
                 onOpen={handleOpen}
                 refreshTask={handleRefreshTask}
+                taken={item.taken}
               />
             </li>
           ))}
@@ -108,6 +109,7 @@ export function ListTasks({ arr }: ListTasksProps) {
                 img={`${api_url}${item.task.image.image_url}`}
                 onOpen={handleOpen}
                 refreshTask={handleRefreshTask}
+                taken={item.taken}
               />
             </li>
           ))}
@@ -141,7 +143,7 @@ export function ListTasks({ arr }: ListTasksProps) {
                 className={style.checkBtn}
                 kind="secondary"
               >
-                {infoTask.taken ? "Бонус получен!" : "Проверить"}
+                {infoTask.taken ? "Бонус получен!" : "Готово!"}
               </Button>
               <Button
                 isLoading={changeStatusMutate.isPending}

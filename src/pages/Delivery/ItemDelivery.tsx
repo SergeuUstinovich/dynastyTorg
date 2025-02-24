@@ -35,7 +35,7 @@ function ItemDelivery() {
             <p className={style.descrInfo}>{deliveryArr.description}</p>
           </div>
           <div className={style.boxAccor}>
-            <Accordion title={deliveryArr.format.title}>
+            <Accordion isLeft title={deliveryArr.format.title}>
               <ul className={style.list}>
                 {deliveryArr.format.deliveryFormat.map((item) => (
                   <li className={style.item} key={item.id}>
@@ -87,7 +87,7 @@ function ItemDelivery() {
                 ))}
               </ul>
             </Accordion>
-            <Accordion title={deliveryArr.benefits.title}>
+            <Accordion isLeft title={deliveryArr.benefits.title}>
               <ul className={style.list}>
                 {deliveryArr.benefits.arr.map((item, index) => (
                   <li className={style.item} key={index}>

@@ -12,3 +12,4 @@ export * from "./ListTasks/ItemTasks";
 export * from './ListLvl/ListLvl'
 export * from './ProgressBar/ProgressBar'
 export * from './ListLvl/ItemLvl'
+export * from './ListPhotoAboutUs/ListPhotoAboutUs'

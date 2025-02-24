@@ -51,7 +51,7 @@
       .skeletonTitle {
         height: 17px;
         width: 150px;
-        background: linear-gradient(90deg, #a5a7a7 0%, #404141 100%);;
+        background: linear-gradient(90deg, #a5a7a7 0%, #404141 100%);
         border-radius: 8px;
         margin-bottom: 3px;
       }
@@ -71,7 +71,7 @@
       .descrSkeleton {
         height: 14px;
         width: 100px;
-        background: linear-gradient(90deg, #a5a7a7 0%, #404141 100%);;
+        background: linear-gradient(90deg, #a5a7a7 0%, #404141 100%);
         border-radius: 8px;
       }
     }
@@ -124,5 +124,71 @@
       border-radius: 40px;
       padding: 8px;
     }
+  }
+}
+
+.boxInfo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .imgInfo {
+    margin-bottom: 20px;
+  }
+
+  .titleInfo {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .descrInfo {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+
+  .boxTitle {
+    margin-bottom: 16px;
+
+    .titleBoxInfo {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 140%;
+      color: var(--secondary);
+      margin-bottom: 4px;
+    }
+
+    .descrBoxInfo {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 140%;
+      color: var(--primary);
+      margin-bottom: 4px;
+      .spanInfo {
+        color: var(--muted);
+      }
+    }
+  }
+
+  .descrCoinInfo {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--muted);
+    margin-bottom: auto;
+  }
+
+  .btnInfo {
+    width: 100%;
+    border-radius: 16px;
+    padding: 12px;
+    background: var(--primary);
+    color: var(--white);
+    margin: 12px 0;
   }
 }

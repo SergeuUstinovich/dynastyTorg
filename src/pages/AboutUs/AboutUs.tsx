@@ -1,10 +1,15 @@
 import ImageContainer from "../../utils/ImageContainer";
 import style from "./AboutUs.module.scss";
 import img from "../../assets/png/aboutUs.png";
-import { Accordion } from "../../ui";
+import { Accordion, CustomSwiper } from "../../ui";
 import { dataAbout } from "./dataAbout";
+import { ContainerSwiper, ItemImgSwiper } from "../../components";
 
 function AboutUs() {
+  const configPhoto = {
+    spaceBetween: 8,
+    slidesPerView: dataAbout && dataAbout.photo.length > 2 ? 2.4 : 2,
+  };
   return (
     <div>
       <div className={style.boxInfo}>
@@ -63,12 +68,25 @@ function AboutUs() {
             {dataAbout.country.map((item, index) => (
               <li className={style.item} key={index}>
                 <h3 className={`${style.title} ${style.titleBox}`}>
-                  <img style={{marginRight: '4px', width: '20px'}} src={item.img} alt="" /> <div>{item.title}</div>
+                  <img
+                    style={{ marginRight: "4px", width: "20px" }}
+                    src={item.img}
+                    alt=""
+                  />{" "}
+                  <div>{item.title}</div>
                 </h3>
               </li>
             ))}
           </ul>
         </Accordion>
+        <ContainerSwiper title="Фото" link="/aboutus-photo">
+          <CustomSwiper config={configPhoto}>
+            {dataAbout &&
+              dataAbout.photo.map((item, index) => (
+                <ItemImgSwiper key={index} src={item.img} descr={""} disable />
+              ))}
+          </CustomSwiper>
+        </ContainerSwiper>
       </div>
     </div>
   );

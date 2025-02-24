@@ -61,7 +61,7 @@ export function useAllMutate() {
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["tasks"] });
         queryClient.invalidateQueries({ queryKey: ["main"] });
-        toast.success('Бонусы получены!');
+        toast.success('Задание выполнено!');
       },
       onError: (err) => {
         toast.error(err.message);
