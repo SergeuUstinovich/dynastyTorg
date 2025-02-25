@@ -6,6 +6,7 @@ import { RefreshSvg } from "../../assets/svg/RefreshSvg/RefreshSvg";
 import { useSelector } from "react-redux";
 import { getMyOrderSelector } from "../../providers/StoreProvider/selectors/getMyOrderSelector";
 import { queryClient } from "../../api/queryClient";
+import { LoaderContent } from "../../ui/Loader/LoaderContent/LoaderContent";
 
 type FilterType = "active" | "history";
 
@@ -62,10 +63,12 @@ function MyOrders() {
           <p className={style.descr}>Здесь будут храниться все ваши заказы.</p>
         </div>
         <div className={style.boxTimer}>
-          {isActive && (
-            <span className={style.timer}>{time}c</span>
-          )}
-          <Button isDisabled={isActive} onClick={handleRefetch} className={style.btn}>
+          {isActive && <span className={style.timer}>{time}c</span>}
+          <Button
+            isDisabled={isActive}
+            onClick={handleRefetch}
+            className={style.btn}
+          >
             <RefreshSvg />
           </Button>
         </div>
@@ -85,9 +88,15 @@ function MyOrders() {
           title="История"
         />
       </div>
-      {filterType === "active"
-        ? allOrders && <ListOrders arr={allOrders.active_order} />
-        : allOrders && <ListOrders arr={allOrders.completed_order} />}
+      {allOrders ? (
+        <>
+          {filterType === "active"
+            ? allOrders && <ListOrders arr={allOrders.active_order} />
+            : allOrders && <ListOrders arr={allOrders.completed_order} />}
+        </>
+      ) : (
+        <LoaderContent />
+      )}
     </div>
   );
 }

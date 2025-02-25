@@ -1,28 +1,34 @@
-.loader {
-  width: 31px;
-  height: 40px;
-  display: inline-block;
-  overflow: hidden;
+.box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
-.blinking {
-  animation: blink 1.5s infinite;
+.loader {
+  width: 160px;
+  height: 160px;
+  border: 20px solid rgba(57, 97, 224, 0.2);
+  border-bottom-color: var(--primary);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin-bottom: 20px;
 }
 
-@keyframes blink {
+.descr {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@keyframes rotation {
   0% {
-    opacity: 1;
-    filter: drop-shadow(0 0 0 #14DD7C);
-  }
-  50% {
-    opacity: 0.5;
-    filter: drop-shadow(0 0 10px #14DD7C);
+    transform: rotate(0deg);
   }
   100% {
-    opacity: 1;
-    filter: drop-shadow(0 0 0 #14DD7C);
+    transform: rotate(360deg);
   }
 }

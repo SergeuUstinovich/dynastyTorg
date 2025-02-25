@@ -3,6 +3,7 @@ import { getMainSelector } from "../../providers/StoreProvider/selectors/getMain
 import style from "./Profile.module.scss";
 import { ContainerSwiper, ItemImgSwiper } from "../../components";
 import { CustomSwiper } from "../../ui";
+import { LoaderContent } from "../../ui/Loader/LoaderContent/LoaderContent";
 
 const api_url = import.meta.env.VITE_API_BASE_URL;
 
@@ -22,10 +23,10 @@ function Profile() {
         )}
         <p className={style.descr}>Ваша персональная скидка</p>
       </div>
-      <ContainerSwiper title="Достижение">
-        <CustomSwiper config={configAchivments}>
-          {user &&
-            user.achievement.map((item) => (
+      {user ? (
+        <ContainerSwiper title="Достижение">
+          <CustomSwiper config={configAchivments}>
+            {user.achievement.map((item) => (
               <ItemImgSwiper
                 key={item.id}
                 src={`${api_url}${item.achievement.image.image_url}`}
@@ -35,8 +36,11 @@ function Profile() {
                 maxWidth
               />
             ))}
-        </CustomSwiper>
-      </ContainerSwiper>
+          </CustomSwiper>
+        </ContainerSwiper>
+      ) : (
+        <LoaderContent />
+      )}
     </div>
   );
 }

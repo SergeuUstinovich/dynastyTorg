@@ -5,6 +5,7 @@ import { CustomSwiper } from "../../ui";
 import style from "./Home.module.scss";
 import { getMainSelector } from "../../providers/StoreProvider/selectors/getMainSelector";
 import { arrDelivery } from "../Delivery/dataDelivery";
+import { LoaderContent } from "../../ui/Loader/LoaderContent/LoaderContent";
 
 const api_url = import.meta.env.VITE_API_BASE_URL;
 
@@ -51,7 +52,7 @@ function Home() {
             ))}
         </CustomSwiper>
       </ContainerSwiper>
-      {arr && arr.actions.length > 0 && (
+      {arr && arr.actions.length > 0 ? (
         <ContainerSwiper title="Акции" link="/home-action">
           <CustomSwiper config={configActions}>
             {arr.actions.map((item) => (
@@ -64,8 +65,10 @@ function Home() {
             ))}
           </CustomSwiper>
         </ContainerSwiper>
+      ): (
+        <LoaderContent />
       )}
-      {arr && arr.skidki.length > 0 && (
+      {arr && arr.skidki.length > 0 ? (
         <ContainerSwiper
           className={style.marg}
           title="Скидки"
@@ -84,6 +87,8 @@ function Home() {
             ))}
           </CustomSwiper>
         </ContainerSwiper>
+      ) : (
+        <LoaderContent />
       )}
     </div>
   );

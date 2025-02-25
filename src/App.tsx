@@ -7,6 +7,8 @@ import ProtectedRouteAction from "./utils/ProtectedRouteAction";
 import ProtectedRouteSkidki from "./utils/ProtectedRouteSkidki";
 import NotPage from "./components/NotPage/NotPage";
 import { ListPhotoAboutUs } from "./components";
+import { LoaderPage } from "./ui/Loader/LoaderPage";
+import InitMobileErr from "./components/InitMobileErr/InitMobileErr";
 
 const Layout = lazy(() => import("./pages/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -30,7 +32,7 @@ const Lvling = lazy(() => import("./pages/Lvling/Lvling"));
 const ItemPhotoAbouUs = lazy(() => import("./components/ListPhotoAboutUs/ItemPhotoAbouUs"));
 
 function App() {
-  const { tg } = useTelegram();
+  const { tg, hash } = useTelegram();
   const navigate = useNavigate();
   const location = useLocation();
   tg.expand();
@@ -54,7 +56,8 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+    {hash ? (
+      <Suspense fallback={<LoaderPage />}>
         <Routes>
           <Route path={"/"} element={<Layout />}>
             <Route index element={<Home />} />
@@ -104,6 +107,10 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
+    ) : (
+      <InitMobileErr />
+    )}
+      
     </>
   );
 }

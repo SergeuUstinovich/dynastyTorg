@@ -6,8 +6,8 @@ interface LoaderPageProps {
 }
 
 export const LoaderPage = ({className = ''}:LoaderPageProps) => (
-  <div className={classNames(style.loader, {}, [className])}>
-    <p>Loading...</p>
-    {/* <img className={style.blinking} src={loaderPage} alt="" /> */}
+  <div className={classNames(style.box, {}, [className])}>
+    <span className={style.loader}></span>
+    <p className={style.descr}>Загрузка...</p>
   </div>
 );
