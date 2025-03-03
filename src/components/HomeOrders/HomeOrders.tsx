@@ -5,7 +5,7 @@ import { ArrowSvg } from "../../assets/svg";
 
 interface MyOrdersProps {
   title: string;
-  descr: string;
+  descr?: string;
   link: string;
 }
 
@@ -15,7 +15,7 @@ export function HomeOrders({ title, descr, link }: MyOrdersProps) {
       <Link className={style.link} to={link}>
         <div className={style.info}>
           <h2 className={style.title}>{title}</h2>
-          <p className={style.descr}>{descr}</p>
+          {descr && <p className={style.descr}>{descr}</p>}
         </div>
         <Button className={style.btn}>
           <ArrowSvg />

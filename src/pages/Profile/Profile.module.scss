@@ -18,4 +18,20 @@
       color: var(--muted);
     }
   }
+
+  .politic {
+    width: 100%;
+    border-radius: 18px;
+    padding: 20px;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    .politicBtn {
+      text-align: center;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 140%;
+      color: var(--primary);
+    }
+  }
 }

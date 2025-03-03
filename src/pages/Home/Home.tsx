@@ -1,11 +1,16 @@
 import { useSelector } from "react-redux";
-import { ContainerSwiper, HomeOrders, ItemImgSwiper } from "../../components";
+import {
+  ContainerSwiper,
+  HomeOrders,
+  ItemImgSwiper,
+  SocialLink,
+} from "../../components";
 import { CustomSwiper } from "../../ui";
-// import { CustomSwiper } from "../../ui";
-import style from "./Home.module.scss";
+import img from "../../assets/png/reviews.png";
 import { getMainSelector } from "../../providers/StoreProvider/selectors/getMainSelector";
 import { arrDelivery } from "../Delivery/dataDelivery";
 import { LoaderContent } from "../../ui/Loader/LoaderContent/LoaderContent";
+import { Button } from "../../ui/Button";
 
 const api_url = import.meta.env.VITE_API_BASE_URL;
 
@@ -65,15 +70,11 @@ function Home() {
             ))}
           </CustomSwiper>
         </ContainerSwiper>
-      ): (
+      ) : (
         <LoaderContent />
       )}
       {arr && arr.skidki.length > 0 ? (
-        <ContainerSwiper
-          className={style.marg}
-          title="Скидки"
-          link="/home-skidki"
-        >
+        <ContainerSwiper title="Скидки" link="/home-skidki">
           <CustomSwiper config={configSkidki}>
             {arr.skidki.map((item) => (
               <ItemImgSwiper
@@ -90,6 +91,14 @@ function Home() {
       ) : (
         <LoaderContent />
       )}
+      <ContainerSwiper title="Наши соц. сети">
+        <SocialLink />
+      </ContainerSwiper>
+      <Button style={{width: '100%', display: 'flex', padding: '0'}}>
+        <ContainerSwiper title="Наши соц. сети" link="/" textLink="Перейти">
+          <img style={{ width: "100%" }} src={img} alt="" />
+        </ContainerSwiper>
+      </Button>
     </div>
   );
 }

@@ -4,15 +4,21 @@ import style from "./Profile.module.scss";
 import { ContainerSwiper, ItemImgSwiper } from "../../components";
 import { CustomSwiper } from "../../ui";
 import { LoaderContent } from "../../ui/Loader/LoaderContent/LoaderContent";
+import { Button } from "../../ui/Button";
+import { useTelegram } from "../../providers/telegram/telegram";
 
 const api_url = import.meta.env.VITE_API_BASE_URL;
 
 function Profile() {
   const user = useSelector(getMainSelector);
+  const {tg} = useTelegram()
   const configAchivments = {
     spaceBetween: 8,
     slidesPerView: user && user.achievement.length > 2 ? 2.4 : 2,
   };
+  const handleLink = () => {
+    tg.openLink('')
+  }
   return (
     <div className={style.boxProfile}>
       <div className={style.boxSkidka}>
@@ -41,6 +47,9 @@ function Profile() {
       ) : (
         <LoaderContent />
       )}
+      <div className={style.politic}>
+        <Button className={style.politicBtn} onClick={handleLink}>Политика конфиденциальности</Button>
+      </div>
     </div>
   );
 }

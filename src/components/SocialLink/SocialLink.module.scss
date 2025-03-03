@@ -1,0 +1,28 @@
+.boxLink {
+  width: 100%;
+
+  .list {
+    display: flex;
+    align-items: flex-start;
+
+    .item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .btn {
+        display: flex;
+        flex-direction: column;
+
+        .descr {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 140%;
+          text-align: center;
+          color: var(--muted);
+        }
+      }
+    }
+  }
+}
