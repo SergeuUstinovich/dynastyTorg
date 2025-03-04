@@ -25,14 +25,14 @@ function ListSkidki() {
           skidki.skidki.map((item) => (
             <Button
               key={item.id}
-              onClick={() => handleBtn(item.activate)}
+              onClick={() => handleBtn(item.active)}
               className={style.btn}
             >
-              {!item.activate ? (
+              {!item.active ? (
                 <ItemImgSwiper
                   src={`${api_url}${item.image}`}
                   descr={item.text}
-                  disable={item.activate}
+                  disable={item.active}
                   title={item.rang.name}
                   sale={item.rang.sale}
                 />
@@ -41,7 +41,7 @@ function ListSkidki() {
                   <ItemImgSwiper
                     src={`${api_url}/${item.image}`}
                     descr={item.text}
-                    disable={item.activate}
+                    disable={item.active}
                     title={item.rang.name}
                     sale={item.rang.sale}
                   />

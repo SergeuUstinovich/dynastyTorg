@@ -63,7 +63,7 @@ function Home() {
             {arr.actions.map((item) => (
               <ItemImgSwiper
                 key={item.id}
-                src={`${api_url}/${item.image.image_url}`}
+                src={`${api_url}${item.image.image_url}`}
                 descr={item.text}
                 disable={item.activate}
               />
@@ -79,9 +79,9 @@ function Home() {
             {arr.skidki.map((item) => (
               <ItemImgSwiper
                 key={item.id}
-                src={`${api_url}/${item.image}`}
+                src={`${api_url}${item.image}`}
                 descr={item.text}
-                disable={item.activate}
+                disable={item.active}
                 title={item.rang.name}
                 sale={item.rang.sale}
               />

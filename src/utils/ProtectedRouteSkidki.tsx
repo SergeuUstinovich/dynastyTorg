@@ -16,7 +16,7 @@ function ProtectedRouteSkidki({ children }: PrivateRouteProps) {
     if (arr && id) {
       const skidki = arr.skidki.find((item) => item.id === Number(id));
       if (skidki) {
-        setIsActive(skidki.activate);
+        setIsActive(skidki.active);
       }
     }
   }, [id, arr]);

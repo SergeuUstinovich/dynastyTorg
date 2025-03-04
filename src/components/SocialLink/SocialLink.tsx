@@ -8,11 +8,11 @@ import imgwhatsapp from "../../assets/svg/whatsapp.svg";
 import { Button } from "../../ui/Button";
 
 const arrLink = [
-  { id: 1, link: "", title: "Чат поставщиков", svg: imgChat },
-  { id: 2, link: "", title: "Telegram канал", svg: imgtelegram },
-  { id: 3, link: "", title: "Наш сайт", svg: imgwebsite },
-  { id: 4, link: "", title: "TikTok аккаунт", svg: imgtiktok },
-  { id: 5, link: "", title: "WhatsApp aккаунт", svg: imgwhatsapp },
+  { id: 1, link: "/", title: "Чат поставщиков", svg: imgChat },
+  { id: 2, link: "/", title: "Telegram канал", svg: imgtelegram },
+  { id: 3, link: "/", title: "Наш сайт", svg: imgwebsite },
+  { id: 4, link: "/", title: "TikTok аккаунт", svg: imgtiktok },
+  { id: 5, link: "/", title: "WhatsApp aккаунт", svg: imgwhatsapp },
 ];
 
 export function SocialLink() {

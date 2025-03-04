@@ -69,7 +69,7 @@ function ItemSkidki() {
                 key={item.id}
                 src={`${api_url}${item.image}`}
                 descr={item.text}
-                disable={item.activate}
+                disable={item.active}
                 title={item.rang.name}
                 sale={item.rang.sale}
               />

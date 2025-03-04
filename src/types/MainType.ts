@@ -88,6 +88,6 @@ export interface SkidkiType {
   };
   description: string;
   text: string;
-  activate: boolean;
+  active: boolean;
   created: string;
 }
