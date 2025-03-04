@@ -19,9 +19,18 @@ export function ItemLvl(props: LvlType) {
   useEffect(() => {
     if (user?.my_rang.name === name) {
       setIsOpen(true);
-      ref.current?.scrollIntoView({ behavior: "smooth" });
+      
     }
   }, [user, name]);
+
+  useEffect(() => {
+    if(isOpen && ref) {
+      const timer = setTimeout(() => {
+        ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'})
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [isOpen])
   
   return (
     <div ref={ref}>
