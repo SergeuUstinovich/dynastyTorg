@@ -41,7 +41,7 @@ export function ItemLvl(props: LvlType) {
         }кг`}
         title={name}
         progress={
-          name !== "Новичок" && (
+          name !== "Новичок" && name !== "Стратегический Партнер" && (
             <ProgressBar
               otrisovka_kv={otrisovka_kv}
               value_min={value_min}
