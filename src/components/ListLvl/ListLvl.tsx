@@ -2,7 +2,8 @@ import { ItemLvl } from "..";
 import { LvlType } from "../../types/LvlType";
 import style from "./ListLvl.module.scss";
 
-export function ListLvl({ arr }: { arr: LvlType[] }) {
+export function ListLvl({ arr, kg }: { arr: LvlType[], kg: number }) {
+   
   return (
     <ul className={style.list}>
       {arr.map((item, index) => (
@@ -12,7 +13,7 @@ export function ListLvl({ arr }: { arr: LvlType[] }) {
             value_min={item.value_min}
             name={item.name}
             sigma={item.sigma}
-            otrisovka_kv={item.otrisovka_kv}
+            otrisovka_kv={kg}
             info={item.info}
             sale={item.sale}
             infoLvl={item.infoLvl}

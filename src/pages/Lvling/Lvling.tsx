@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 import { addInfoLvlToData } from "../../helpers/addInfoLvlData";
 import { LvlType } from "../../types/LvlType";
 import { LoaderContent } from "../../ui/Loader/LoaderContent/LoaderContent";
+import { getMainSelector } from "../../providers/StoreProvider/selectors/getMainSelector";
 
 function Lvling() {
   const arrLvl = useSelector(getLvlSelector);
   const [allLvl, setAllLvl] = useState<LvlType[]>();
+  const userKg = useSelector(getMainSelector)
 
   useEffect(() => {
     if (arrLvl) {
@@ -20,7 +22,7 @@ function Lvling() {
   return (
     <div>
       <TitlePage title="Уровни" />
-      {allLvl ? <ListLvl arr={allLvl} /> : <LoaderContent isBg />}
+      {allLvl && userKg ? <ListLvl arr={allLvl} kg={userKg.user.kg_order} /> : <LoaderContent isBg />}
     </div>
   );
 }
