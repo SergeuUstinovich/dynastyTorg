@@ -72,6 +72,7 @@ function ItemSkidki() {
                 disable={item.active}
                 title={item.rang.name}
                 sale={item.rang.sale}
+                link={`/home-skidki/${item.id}`}
               />
             ))}
         </CustomSwiper>

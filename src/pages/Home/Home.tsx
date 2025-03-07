@@ -53,6 +53,7 @@ function Home() {
                 src={item.img}
                 descr={item.title}
                 disable
+                link={`/home-delivery/${item.id}`}
               />
             ))}
         </CustomSwiper>
@@ -66,6 +67,7 @@ function Home() {
                 src={`${api_url}${item.image.image_url}`}
                 descr={item.text}
                 disable={item.activate}
+                link={`/home-action/${item.id}`}
               />
             ))}
           </CustomSwiper>
@@ -84,6 +86,7 @@ function Home() {
                 disable={item.active}
                 title={item.rang.name}
                 sale={item.rang.sale}
+                link={`/home-skidki/${item.id}`}
               />
             ))}
           </CustomSwiper>
@@ -95,7 +98,7 @@ function Home() {
         <SocialLink />
       </ContainerSwiper>
       <Button style={{width: '100%', display: 'flex', padding: '0'}}>
-        <ContainerSwiper title="Наши соц. сети" link="/" textLink="Перейти">
+        <ContainerSwiper title="Отзывы" link="/" textLink="Перейти">
           <img style={{ width: "100%" }} src={img} alt="" />
         </ContainerSwiper>
       </Button>

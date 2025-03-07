@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { CloseLockSvg } from "../../assets/svg";
 import ImageContainer from "../../utils/ImageContainer";
 import style from "./ItemImgSwiper.module.scss";
@@ -9,6 +10,7 @@ interface ItemImgSwiperProps {
   title?: string;
   sale?: number;
   maxWidth?: boolean;
+  link?: string;
 }
 
 export function ItemImgSwiper({
@@ -18,9 +20,15 @@ export function ItemImgSwiper({
   title,
   sale,
   maxWidth,
+  link
 }: ItemImgSwiperProps) {
+  const navigate = useNavigate()
+  const handleLink = () => {
+    if(!link) return
+    navigate(link)
+  }
   return (
-    <div className={style.boxItem}>
+    <div onClick={handleLink} className={style.boxItem}>
       <div className={style.boxImg}>
         <ImageContainer className={style.img} src={src} x1x16 />
         {!disable && (

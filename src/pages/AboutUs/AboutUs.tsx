@@ -83,7 +83,7 @@ function AboutUs() {
           <CustomSwiper config={configPhoto}>
             {dataAbout &&
               dataAbout.photo.map((item, index) => (
-                <ItemImgSwiper key={index} src={item.img} descr={""} disable />
+                <ItemImgSwiper link={`/aboutus-photo/${index}`} key={index} src={item.img} descr={""} disable />
               ))}
           </CustomSwiper>
         </ContainerSwiper>

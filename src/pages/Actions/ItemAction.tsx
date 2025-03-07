@@ -63,6 +63,7 @@ function ItemAction() {
                 src={`${api_url}${item.image.image_url}`}
                 descr={item.text}
                 disable={item.activate}
+                link={`/home-action/${item.id}`}
               />
             ))}
         </CustomSwiper>
