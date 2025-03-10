@@ -24,6 +24,7 @@ export function useAllMutate() {
         ),
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["main"] });
+        toast.success('Спасибо! Форма успешно отправлена')
       },
     },
     queryClient
